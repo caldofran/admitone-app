@@ -40,7 +40,7 @@ static APKickAssTorrentFinder *sharedInstance = nil;
 - (NSString*)torrentUrlFromDictionary:(NSDictionary*)dict{
     NSString *returnedString = [[dict objectForKey:@"enclosure"] objectForKey:@"url"];
     if ([returnedString rangeOfString:@"torcache.net"].location!=NSNotFound) {
-        returnedString = [NSString stringWithFormat:@"http://torrage.com/torrent/%@.torrent",[dict objectForKey:@"hash"]];
+        returnedString = [NSString stringWithFormat:@"http://torrage.com/torrent/%@.torrent",[dict objectForKey:@"infoHash"]];
     }
     return returnedString;
 }

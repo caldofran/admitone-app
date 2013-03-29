@@ -166,7 +166,7 @@
         NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
         
         if ([response statusCode]!=200) {
-            [[NSAlert alertWithMessageText:[error description] defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"URL : %@ \n\n Make sure you are not on a network that blocks torrent downloads. Check by trying to download a torrent fil manualy, on http://kat.ph for example.",_movie.bestTorrent]] runModal];
+            [[NSAlert alertWithMessageText:[error description] defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:[NSString stringWithFormat:@"URL : %@ \n\n Make sure you are not on a network that blocks torrent downloads. Check by trying to download a torrent file manualy, on http://kat.ph for example.",_movie.bestTorrent]] runModal];
         }
         
         BOOL useSystemAppToDownload = [[[NSUserDefaults standardUserDefaults] objectForKey:kAPUseSystemAppToDownload] boolValue];
@@ -178,7 +178,8 @@
             path = [[paths objectAtIndex:0] stringByAppendingFormat:@"/AdmitOne/Temp/%@",_movie.bestTorrent.lastPathComponent];
         }
         else{
-            path = [[paths objectAtIndex:0] stringByAppendingFormat:@"/AdmitOne/OpenWithSystemApp/%@",_movie.bestTorrent.lastPathComponent];
+            NSString *downloadFolder = [[NSUserDefaults standardUserDefaults]objectForKey:kAPDownloadFolder];
+            path = [downloadFolder stringByAppendingFormat:@"/%@",_movie.bestTorrent.lastPathComponent];
         }
         
         if (![path hasSuffix:@".torrent"]) {
