@@ -1,0 +1,14 @@
+//
+// Prefix header for all source files of the 'AdmitOne' target in the 'AdmitOne' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import "DMHosts.h"
+#endif
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s, line %d: " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#   define DLog(...)
+#endif
