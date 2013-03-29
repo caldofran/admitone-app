@@ -17,7 +17,6 @@
 #import "SCEvent.h"
 #import "APTorrentList.h"
 #import "Torrent.h"
-#import "ObjectiveMetrics.h"
 #import "Constants.h"
 
 @implementation AppDelegate
@@ -69,12 +68,21 @@
     //load torrents in list
     [[APTorrentList sharedInstance] addTorrentsAtPaths:[fm contentsOfDirectoryAtPath:torrentFilesDirectory error:nil]];
     
-    //DesktopMetrics
-    DMTracker *tracker = [DMTracker defaultTracker];
-    [tracker startApp];
+    //GoogleAnalytics
+    _tracker = [GAJavaScriptTracker trackerWithAccountID:@"UA-28515259-1"];
+    if(!_tracker.isRunning) {
+        [_tracker start];
+    }
+    [_tracker trackEvent:@"AdmitOne Mac App" action:@"launched" label:@"AdmitOne Mac App Launched" value:-1 withError:nil];
     
     //refresh badge on dock icon every 2 seconds
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(refreshApplicationBadgeLabel) userInfo:nil repeats:YES];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification {
+    if(_tracker.isRunning) {
+        [_tracker stop];
+    }
 }
 
 -(BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag{

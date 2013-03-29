@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <GAJavaScriptTracker/GAJavaScriptTracker.h>
 #import "SCEventListenerProtocol.h"
 
 @class APMainViewController;
@@ -28,6 +29,8 @@
     IBOutlet NSButton *_downloadPopoverButton;
     IBOutlet NSPopover *_downloadPopover;
     IBOutlet NSSearchField *_searchField;
+    
+    GAJavaScriptTracker *_tracker;
 }
 
 @property (assign) IBOutlet NSWindow *window;

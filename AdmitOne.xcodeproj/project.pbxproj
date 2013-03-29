@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		692655AA1705FAE7005A6505 /* GAJavaScriptTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692655A81705F707005A6505 /* GAJavaScriptTracker.framework */; };
+		692655AB1705FC0A005A6505 /* GAJavaScriptTracker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 692655A81705F707005A6505 /* GAJavaScriptTracker.framework */; };
 		9214BE4214BF324400B9B01E /* libnatpmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C42BF14BC7360007E21C7 /* libnatpmp.dylib */; };
 		9214BE4414BF344D00B9B01E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9214BE4314BF344D00B9B01E /* Defaults.plist */; };
 		9214BE4714BF35E600B9B01E /* APCinemaTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */; };
@@ -234,13 +236,6 @@
 		9248845F15966B8B007E494A /* APPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9248845E15966B8B007E494A /* APPreferencesWindowController.m */; };
 		92673FDF14C7346300431837 /* APMovieTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92673FDE14C7346300431837 /* APMovieTorrentFinder.m */; };
 		926F43DB14CE0179002ACAA8 /* trashTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 926F43DA14CE0179002ACAA8 /* trashTemplate.pdf */; };
-		928450AC14D9781400AC58C2 /* DMHosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 9284509E14D9781400AC58C2 /* DMHosts.m */; };
-		928450AD14D9781400AC58C2 /* DMRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 928450A014D9781400AC58C2 /* DMRequester.m */; };
-		928450AE14D9781400AC58C2 /* DMTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 928450A214D9781400AC58C2 /* DMTracker.m */; };
-		928450AF14D9781400AC58C2 /* DMTrackingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 928450A414D9781400AC58C2 /* DMTrackingQueue.m */; };
-		928450B014D9781400AC58C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928450A514D9781400AC58C2 /* InfoPlist.strings */; };
-		928450B114D9781400AC58C2 /* NSString+DMUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 928450A814D9781400AC58C2 /* NSString+DMUUID.m */; };
-		928450B214D9781400AC58C2 /* ObjectiveMetrics-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928450A914D9781400AC58C2 /* ObjectiveMetrics-Info.plist */; };
 		928450BE14D97B9E00AC58C2 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928450BD14D97B9E00AC58C2 /* Sparkle.framework */; };
 		928450C014D97BCC00AC58C2 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 928450BD14D97B9E00AC58C2 /* Sparkle.framework */; };
 		92D629E414C143F600E9361F /* APBtJunkieTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D629E314C143F600E9361F /* APBtJunkieTorrentFinder.m */; };
@@ -325,12 +320,14 @@
 			dstSubfolderSpec = 10;
 			files = (
 				928450C014D97BCC00AC58C2 /* Sparkle.framework in CopyFiles */,
+				692655AB1705FC0A005A6505 /* GAJavaScriptTracker.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		692655A81705F707005A6505 /* GAJavaScriptTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GAJavaScriptTracker.framework; path = AdmitOne/Utilities/GAJavaScriptTracker.framework; sourceTree = "<group>"; };
 		9214BE4314BF344D00B9B01E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		9214BE4514BF35E600B9B01E /* APCinemaTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCinemaTorrentFinder.h; sourceTree = "<group>"; };
 		9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCinemaTorrentFinder.m; sourceTree = "<group>"; };
@@ -586,20 +583,6 @@
 		9248845E15966B8B007E494A /* APPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APPreferencesWindowController.m; path = Classes/Controllers/APPreferencesWindowController.m; sourceTree = "<group>"; };
 		92673FDE14C7346300431837 /* APMovieTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMovieTorrentFinder.m; sourceTree = "<group>"; };
 		926F43DA14CE0179002ACAA8 /* trashTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = trashTemplate.pdf; path = Resources/Images/trashTemplate.pdf; sourceTree = "<group>"; };
-		9284509D14D9781400AC58C2 /* DMHosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMHosts.h; sourceTree = "<group>"; };
-		9284509E14D9781400AC58C2 /* DMHosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMHosts.m; sourceTree = "<group>"; };
-		9284509F14D9781400AC58C2 /* DMRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMRequester.h; sourceTree = "<group>"; };
-		928450A014D9781400AC58C2 /* DMRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMRequester.m; sourceTree = "<group>"; };
-		928450A114D9781400AC58C2 /* DMTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTracker.h; sourceTree = "<group>"; };
-		928450A214D9781400AC58C2 /* DMTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTracker.m; sourceTree = "<group>"; };
-		928450A314D9781400AC58C2 /* DMTrackingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTrackingQueue.h; sourceTree = "<group>"; };
-		928450A414D9781400AC58C2 /* DMTrackingQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMTrackingQueue.m; sourceTree = "<group>"; };
-		928450A614D9781400AC58C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		928450A714D9781400AC58C2 /* NSString+DMUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DMUUID.h"; sourceTree = "<group>"; };
-		928450A814D9781400AC58C2 /* NSString+DMUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DMUUID.m"; sourceTree = "<group>"; };
-		928450A914D9781400AC58C2 /* ObjectiveMetrics-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ObjectiveMetrics-Info.plist"; sourceTree = "<group>"; };
-		928450AA14D9781400AC58C2 /* ObjectiveMetrics-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ObjectiveMetrics-Prefix.pch"; sourceTree = "<group>"; };
-		928450AB14D9781400AC58C2 /* ObjectiveMetrics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveMetrics.h; sourceTree = "<group>"; };
 		928450BD14D97B9E00AC58C2 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		92D629E014C13DE900E9361F /* APMovieTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMovieTorrentFinder.h; sourceTree = "<group>"; };
 		92D629E214C143F600E9361F /* APBtJunkieTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APBtJunkieTorrentFinder.h; sourceTree = "<group>"; };
@@ -633,7 +616,6 @@
 		92F5E37A14A41E9B0071B3D5 /* AdmitOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdmitOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F5E37E14A41E9B0071B3D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		92F5E38114A41E9B0071B3D5 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		92F5E38214A41E9B0071B3D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		92F5E38314A41E9B0071B3D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		92F5E38614A41E9B0071B3D5 /* AdmitOne-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AdmitOne-Info.plist"; sourceTree = "<group>"; };
 		92F5E38814A41E9B0071B3D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -711,6 +693,7 @@
 				922C438B14BC9887007E21C7 /* libz.dylib in Frameworks */,
 				922C439A14BC9D92007E21C7 /* libxml2.dylib in Frameworks */,
 				928450BE14D97B9E00AC58C2 /* Sparkle.framework in Frameworks */,
+				692655AA1705FAE7005A6505 /* GAJavaScriptTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -986,28 +969,6 @@
 			path = Utilities/SCEvent;
 			sourceTree = "<group>";
 		};
-		9284509C14D9781400AC58C2 /* ObjectiveMetrics */ = {
-			isa = PBXGroup;
-			children = (
-				9284509D14D9781400AC58C2 /* DMHosts.h */,
-				9284509E14D9781400AC58C2 /* DMHosts.m */,
-				9284509F14D9781400AC58C2 /* DMRequester.h */,
-				928450A014D9781400AC58C2 /* DMRequester.m */,
-				928450A114D9781400AC58C2 /* DMTracker.h */,
-				928450A214D9781400AC58C2 /* DMTracker.m */,
-				928450A314D9781400AC58C2 /* DMTrackingQueue.h */,
-				928450A414D9781400AC58C2 /* DMTrackingQueue.m */,
-				928450A514D9781400AC58C2 /* InfoPlist.strings */,
-				928450A714D9781400AC58C2 /* NSString+DMUUID.h */,
-				928450A814D9781400AC58C2 /* NSString+DMUUID.m */,
-				928450A914D9781400AC58C2 /* ObjectiveMetrics-Info.plist */,
-				928450AA14D9781400AC58C2 /* ObjectiveMetrics-Prefix.pch */,
-				928450AB14D9781400AC58C2 /* ObjectiveMetrics.h */,
-			);
-			name = ObjectiveMetrics;
-			path = Utilities/ObjectiveMetrics;
-			sourceTree = "<group>";
-		};
 		92D629E114C143B700E9361F /* TorrentFinders */ = {
 			isa = PBXGroup;
 			children = (
@@ -1081,7 +1042,6 @@
 		92F5E36F14A41E9B0071B3D5 = {
 			isa = PBXGroup;
 			children = (
-				9214BE4B14BF49E300B9B01E /* WebKit.framework */,
 				92F5E38414A41E9B0071B3D5 /* AdmitOne */,
 				92F5E37D14A41E9B0071B3D5 /* Frameworks */,
 				92F5E37B14A41E9B0071B3D5 /* Products */,
@@ -1105,6 +1065,10 @@
 		92F5E37D14A41E9B0071B3D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92F5E38314A41E9B0071B3D5 /* Foundation.framework */,
+				92F5E38114A41E9B0071B3D5 /* AppKit.framework */,
+				692655A81705F707005A6505 /* GAJavaScriptTracker.framework */,
+				9214BE4B14BF49E300B9B01E /* WebKit.framework */,
 				928450BD14D97B9E00AC58C2 /* Sparkle.framework */,
 				922C43A914BCC3E4007E21C7 /* CoreServices.framework */,
 				92F5E37E14A41E9B0071B3D5 /* Cocoa.framework */,
@@ -1114,19 +1078,8 @@
 				922C438E14BC98B8007E21C7 /* libcurl.dylib */,
 				922C438A14BC9886007E21C7 /* libz.dylib */,
 				922C439914BC9D91007E21C7 /* libxml2.dylib */,
-				92F5E38014A41E9B0071B3D5 /* Other Frameworks */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		92F5E38014A41E9B0071B3D5 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				92F5E38114A41E9B0071B3D5 /* AppKit.framework */,
-				92F5E38214A41E9B0071B3D5 /* CoreData.framework */,
-				92F5E38314A41E9B0071B3D5 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		92F5E38414A41E9B0071B3D5 /* AdmitOne */ = {
@@ -1226,7 +1179,6 @@
 		92F5E3A514A41F520071B3D5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				9284509C14D9781400AC58C2 /* ObjectiveMetrics */,
 				922C43AB14BCC7CC007E21C7 /* SCEvent */,
 				922C41DC14BB972F007E21C7 /* libminiupnp */,
 				922C41DD14BB972F007E21C7 /* libnatpmp */,
@@ -1582,8 +1534,6 @@
 				923B219D14C619E90011EC30 /* loading.gif in Resources */,
 				923B219F14C61A5C0011EC30 /* icon.icns in Resources */,
 				926F43DB14CE0179002ACAA8 /* trashTemplate.pdf in Resources */,
-				928450B014D9781400AC58C2 /* InfoPlist.strings in Resources */,
-				928450B214D9781400AC58C2 /* ObjectiveMetrics-Info.plist in Resources */,
 				9248845915965010007E494A /* Glass.aiff in Resources */,
 				9248845C159667D3007E494A /* APPreferences.xib in Resources */,
 			);
@@ -1788,11 +1738,6 @@
 				92D99FED14C1DB2A00EDF1B5 /* APIsoHuntTorrentFinder.m in Sources */,
 				92D99FF114C1E2AD00EDF1B5 /* APKickAssTorrentFinder.m in Sources */,
 				92673FDF14C7346300431837 /* APMovieTorrentFinder.m in Sources */,
-				928450AC14D9781400AC58C2 /* DMHosts.m in Sources */,
-				928450AD14D9781400AC58C2 /* DMRequester.m in Sources */,
-				928450AE14D9781400AC58C2 /* DMTracker.m in Sources */,
-				928450AF14D9781400AC58C2 /* DMTrackingQueue.m in Sources */,
-				928450B114D9781400AC58C2 /* NSString+DMUUID.m in Sources */,
 				9248845F15966B8B007E494A /* APPreferencesWindowController.m in Sources */,
 				92FE9DB31596A2DA00F437A9 /* APReactorTorrentFinder.m in Sources */,
 			);
@@ -1834,14 +1779,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		928450A514D9781400AC58C2 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				928450A614D9781400AC58C2 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		92F5E38714A41E9B0071B3D5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2313,7 +2250,10 @@
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-CC";
 				INFOPLIST_PREFIX_HEADER = "$(SRCROOT)/AdmitOne/Utilities/libtransmission/version.h";
 				INFOPLIST_PREPROCESS = YES;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AdmitOne/Utilities/GoogleAnalytics\"",
+				);
 				OTHER_CFLAGS = "-DSYS_DARWIN";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2358,7 +2298,10 @@
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-CC";
 				INFOPLIST_PREFIX_HEADER = "$(SRCROOT)/AdmitOne/Utilities/libtransmission/version.h";
 				INFOPLIST_PREPROCESS = YES;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/AdmitOne/Utilities/GoogleAnalytics\"",
+				);
 				OTHER_CFLAGS = "-DSYS_DARWIN";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
