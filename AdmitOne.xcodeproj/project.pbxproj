@@ -11,6 +11,7 @@
 		692655AB1705FC0A005A6505 /* GAJavaScriptTracker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 692655A81705F707005A6505 /* GAJavaScriptTracker.framework */; };
 		692655BA17060F11005A6505 /* navy_blue_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 692655B817060F11005A6505 /* navy_blue_@2X.png */; };
 		692655BB17060F11005A6505 /* navy_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 692655B917060F11005A6505 /* navy_blue.png */; };
+		692655BE17062745005A6505 /* NSButton+LinkLike.m in Sources */ = {isa = PBXBuildFile; fileRef = 692655BD17062745005A6505 /* NSButton+LinkLike.m */; };
 		9214BE4214BF324400B9B01E /* libnatpmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C42BF14BC7360007E21C7 /* libnatpmp.dylib */; };
 		9214BE4414BF344D00B9B01E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9214BE4314BF344D00B9B01E /* Defaults.plist */; };
 		9214BE4714BF35E600B9B01E /* APCinemaTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */; };
@@ -332,6 +333,8 @@
 		692655A81705F707005A6505 /* GAJavaScriptTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GAJavaScriptTracker.framework; path = AdmitOne/Utilities/GAJavaScriptTracker.framework; sourceTree = "<group>"; };
 		692655B817060F11005A6505 /* navy_blue_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navy_blue_@2X.png"; path = "Resources/Images/navy_blue_@2X.png"; sourceTree = "<group>"; };
 		692655B917060F11005A6505 /* navy_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navy_blue.png; path = Resources/Images/navy_blue.png; sourceTree = "<group>"; };
+		692655BC17062745005A6505 /* NSButton+LinkLike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSButton+LinkLike.h"; path = "Utilities/NSButton+LinkLike.h"; sourceTree = "<group>"; };
+		692655BD17062745005A6505 /* NSButton+LinkLike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+LinkLike.m"; path = "Utilities/NSButton+LinkLike.m"; sourceTree = "<group>"; };
 		9214BE4314BF344D00B9B01E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		9214BE4514BF35E600B9B01E /* APCinemaTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCinemaTorrentFinder.h; sourceTree = "<group>"; };
 		9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCinemaTorrentFinder.m; sourceTree = "<group>"; };
@@ -1198,6 +1201,8 @@
 				9219B88F14B7423E00AD1B03 /* NSData+Base64.m */,
 				9219B87214B741E000AD1B03 /* JSON */,
 				9219B88014B741E000AD1B03 /* XML */,
+				692655BC17062745005A6505 /* NSButton+LinkLike.h */,
+				692655BD17062745005A6505 /* NSButton+LinkLike.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -1748,6 +1753,7 @@
 				92673FDF14C7346300431837 /* APMovieTorrentFinder.m in Sources */,
 				9248845F15966B8B007E494A /* APPreferencesWindowController.m in Sources */,
 				92FE9DB31596A2DA00F437A9 /* APReactorTorrentFinder.m in Sources */,
+				692655BE17062745005A6505 /* NSButton+LinkLike.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

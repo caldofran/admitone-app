@@ -9,6 +9,7 @@
 #import "APMovieCollectionViewItem.h"
 #import "APMovie.h"
 #import "AppDelegate.h"
+#import "NSButton+LinkLike.h"
 
 @implementation APMovieCollectionViewItem
 
