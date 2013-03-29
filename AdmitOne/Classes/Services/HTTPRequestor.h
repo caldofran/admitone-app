@@ -3,7 +3,7 @@
 //  incidents
 //
 //  Created by Anthony Plourde on 11-11-18.
-//  Copyright (c) 2011 Edovia. All rights reserved.
+//  Copyright (c) 2011 Anthony Plourde. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
