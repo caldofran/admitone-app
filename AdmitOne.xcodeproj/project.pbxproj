@@ -583,7 +583,7 @@
 		9248845E15966B8B007E494A /* APPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APPreferencesWindowController.m; path = Classes/Controllers/APPreferencesWindowController.m; sourceTree = "<group>"; };
 		92673FDE14C7346300431837 /* APMovieTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMovieTorrentFinder.m; sourceTree = "<group>"; };
 		926F43DA14CE0179002ACAA8 /* trashTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = trashTemplate.pdf; path = Resources/Images/trashTemplate.pdf; sourceTree = "<group>"; };
-		928450BD14D97B9E00AC58C2 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		928450BD14D97B9E00AC58C2 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = AdmitOne/Utilities/Sparkle.framework; sourceTree = "<group>"; };
 		92D629E014C13DE900E9361F /* APMovieTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMovieTorrentFinder.h; sourceTree = "<group>"; };
 		92D629E214C143F600E9361F /* APBtJunkieTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APBtJunkieTorrentFinder.h; sourceTree = "<group>"; };
 		92D629E314C143F600E9361F /* APBtJunkieTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APBtJunkieTorrentFinder.m; sourceTree = "<group>"; };
