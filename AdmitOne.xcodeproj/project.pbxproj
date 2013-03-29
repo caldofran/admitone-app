@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		692655AA1705FAE7005A6505 /* GAJavaScriptTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692655A81705F707005A6505 /* GAJavaScriptTracker.framework */; };
 		692655AB1705FC0A005A6505 /* GAJavaScriptTracker.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 692655A81705F707005A6505 /* GAJavaScriptTracker.framework */; };
+		692655BA17060F11005A6505 /* navy_blue_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 692655B817060F11005A6505 /* navy_blue_@2X.png */; };
+		692655BB17060F11005A6505 /* navy_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 692655B917060F11005A6505 /* navy_blue.png */; };
 		9214BE4214BF324400B9B01E /* libnatpmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C42BF14BC7360007E21C7 /* libnatpmp.dylib */; };
 		9214BE4414BF344D00B9B01E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9214BE4314BF344D00B9B01E /* Defaults.plist */; };
 		9214BE4714BF35E600B9B01E /* APCinemaTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */; };
@@ -328,6 +330,8 @@
 
 /* Begin PBXFileReference section */
 		692655A81705F707005A6505 /* GAJavaScriptTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GAJavaScriptTracker.framework; path = AdmitOne/Utilities/GAJavaScriptTracker.framework; sourceTree = "<group>"; };
+		692655B817060F11005A6505 /* navy_blue_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navy_blue_@2X.png"; path = "Resources/Images/navy_blue_@2X.png"; sourceTree = "<group>"; };
+		692655B917060F11005A6505 /* navy_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navy_blue.png; path = Resources/Images/navy_blue.png; sourceTree = "<group>"; };
 		9214BE4314BF344D00B9B01E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		9214BE4514BF35E600B9B01E /* APCinemaTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCinemaTorrentFinder.h; sourceTree = "<group>"; };
 		9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCinemaTorrentFinder.m; sourceTree = "<group>"; };
@@ -1004,6 +1008,8 @@
 		92E76D8D14B755C200D7BB91 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				692655B817060F11005A6505 /* navy_blue_@2X.png */,
+				692655B917060F11005A6505 /* navy_blue.png */,
 				926F43DA14CE0179002ACAA8 /* trashTemplate.pdf */,
 				923B219E14C61A5C0011EC30 /* icon.icns */,
 				923B219A14C619E90011EC30 /* hud.png */,
@@ -1536,6 +1542,8 @@
 				926F43DB14CE0179002ACAA8 /* trashTemplate.pdf in Resources */,
 				9248845915965010007E494A /* Glass.aiff in Resources */,
 				9248845C159667D3007E494A /* APPreferences.xib in Resources */,
+				692655BA17060F11005A6505 /* navy_blue_@2X.png in Resources */,
+				692655BB17060F11005A6505 /* navy_blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

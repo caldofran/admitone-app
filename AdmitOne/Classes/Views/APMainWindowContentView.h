@@ -9,12 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface APMainWindowContentView : NSView{
-    NSColor *startingColor;
-    NSColor *endingColor;
-    int angle;
+    NSColor *backgroundColor;
 }
-@property(nonatomic, retain) NSColor *startingColor;
-@property(nonatomic, retain) NSColor *endingColor;
-@property(assign) int angle;
+@property(nonatomic, retain) NSColor *backgroundColor;
 
 @end
