@@ -215,8 +215,8 @@
 					</object>
 					<object class="NSProgressIndicator" id="493374775">
 						<reference key="NSNextResponder" ref="1005"/>
-						<int key="NSvFlags">1292</int>
-						<string key="NSFrame">{{167, 195}, {16, 16}}</string>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{168, 184}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:3891</string>
@@ -225,8 +225,8 @@
 					</object>
 					<object class="NSProgressIndicator" id="39789415">
 						<reference key="NSNextResponder" ref="1005"/>
-						<int key="NSvFlags">1292</int>
-						<string key="NSFrame">{{167, 249}, {16, 16}}</string>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{168, 238}, {16, 16}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:3891</string>
@@ -236,7 +236,7 @@
 					<object class="NSSegmentedControl" id="843698146">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{18, 220}, {71, 20}}</string>
+						<string key="NSFrame">{{19, 209}, {71, 20}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="959015700"/>
@@ -274,7 +274,7 @@
 					<object class="NSPopUpButton" id="357560877">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{96, 220}, {92, 19}}</string>
+						<string key="NSFrame">{{97, 209}, {92, 19}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="74781526"/>
@@ -374,7 +374,7 @@
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 						</object>
-						<string key="NSFrame">{{17, 247}, {171, 19}}</string>
+						<string key="NSFrame">{{18, 236}, {171, 19}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:2434</string>
@@ -402,7 +402,7 @@
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 						</object>
-						<string key="NSFrame">{{18, 193}, {170, 19}}</string>
+						<string key="NSFrame">{{18, 183}, {170, 19}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="503481065"/>
@@ -428,7 +428,7 @@
 					<object class="NSTextField" id="684235611">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{17, 138}, {99, 18}}</string>
+						<string key="NSFrame">{{17, 134}, {99, 18}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<object class="NSShadow" key="NSViewShadow">
@@ -469,7 +469,7 @@
 					<object class="NSTextField" id="983751381">
 						<reference key="NSNextResponder" ref="1005"/>
 						<int key="NSvFlags">268</int>
-						<string key="NSFrame">{{17, 163}, {89, 18}}</string>
+						<string key="NSFrame">{{17, 159}, {89, 18}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="684235611"/>
@@ -1065,7 +1065,7 @@
 						<object class="NSShadow" key="NSViewShadow">
 							<double key="NSShadowHoriz">2</double>
 							<double key="NSShadowVert">-2</double>
-							<double key="NSShadowBlurRadius">4</double>
+							<double key="NSShadowBlurRadius">6</double>
 							<reference key="NSShadowColor" ref="706738638"/>
 						</object>
 						<string key="NSReuseIdentifierKey">_NS:2141</string>
@@ -1405,13 +1405,13 @@
 							<reference ref="528382018"/>
 							<reference ref="983751381"/>
 							<reference ref="684235611"/>
+							<reference ref="74781526"/>
+							<reference ref="959015700"/>
+							<reference ref="828606279"/>
 							<reference ref="357560877"/>
 							<reference ref="843698146"/>
-							<reference ref="74781526"/>
-							<reference ref="828606279"/>
 							<reference ref="39789415"/>
 							<reference ref="493374775"/>
-							<reference ref="959015700"/>
 						</object>
 						<reference key="parent" ref="1002"/>
 					</object>
@@ -1945,7 +1945,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<real value="4"/>
+					<real value="6"/>
 					<real value="-2"/>
 					<real value="2"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>

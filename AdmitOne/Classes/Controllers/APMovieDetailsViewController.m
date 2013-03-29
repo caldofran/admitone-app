@@ -37,6 +37,7 @@
                     [_trailerButton setTitle:@"NO TRAILER FOUND"];
                 }
                 [_trailerSearching stopAnimation:nil];
+                [CATransaction flush];
             });
         });
     }
@@ -86,6 +87,7 @@
                 [_downloadButton setTitle:@"NO DOWNLOAD FOUND"];
             }
             [_downloadSearching stopAnimation:nil];
+            [CATransaction flush];
             [torrents release];
         });
         dispatch_release(torrentFinder);

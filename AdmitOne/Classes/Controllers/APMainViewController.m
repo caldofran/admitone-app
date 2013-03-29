@@ -51,6 +51,7 @@
                 _titleContent.stringValue = [NSString stringWithFormat:@"%d movie(s) found for \"%@\"",[searchResult count],keywords];
                 [_collectionView setContent:searchResult];
                 [_loadingView setHidden:YES];
+                [CATransaction flush];
             }
         });
     });
