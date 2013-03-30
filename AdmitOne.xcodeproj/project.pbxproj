@@ -1099,7 +1099,6 @@
 			isa = PBXGroup;
 			children = (
 				92F5E3A514A41F520071B3D5 /* Utilities */,
-				92F5E3A114A41F0A0071B3D5 /* Common */,
 				92F5E3A614A41F670071B3D5 /* Resources */,
 				92F5E39F14A41EFE0071B3D5 /* Classes */,
 				92F5E39014A41E9B0071B3D5 /* AppDelegate.h */,
@@ -1131,13 +1130,6 @@
 				92F5E3A214A41F280071B3D5 /* Controllers */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		92F5E3A114A41F0A0071B3D5 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Common;
 			sourceTree = "<group>";
 		};
 		92F5E3A214A41F280071B3D5 /* Controllers */ = {

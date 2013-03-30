@@ -8,37 +8,40 @@
 
 #import <Cocoa/Cocoa.h>
 #import <GAJavaScriptTracker/GAJavaScriptTracker.h>
+
 #import "SCEventListenerProtocol.h"
 
 @class APMainViewController;
 @class APMovieDetailsViewController;
 @class APDownloadViewController;
-@class APMovie;
 @class APPreferencesWindowController;
+@class APMovie;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, SCEventListenerProtocol>{
+    
     APMainViewController *_mainViewController;
     APMovieDetailsViewController *_detailsViewController;
     APDownloadViewController *_downloadViewController;
-    APPreferencesWindowController *_preferencesWindow;
+    APPreferencesWindowController *_preferencesWindowController;
     
-    IBOutlet NSButton *_topRentals;
-    IBOutlet NSButton *_currentReleases;
-    IBOutlet NSButton *_newReleases;
-    IBOutlet NSButton *_back;
+    GAJavaScriptTracker *_tracker;
+    
+    IBOutlet NSButton *_topRentalsSectionButton;
+    IBOutlet NSButton *_currentReleasesSectionButton;
+    IBOutlet NSButton *_newReleasesSectionButton;
+    IBOutlet NSButton *_backButton;
     IBOutlet NSButton *_downloadPopoverButton;
     IBOutlet NSPopover *_downloadPopover;
     IBOutlet NSSearchField *_searchField;
-    
-    GAJavaScriptTracker *_tracker;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 
--(IBAction)showPreferences:(id)sender;
 -(void)showMovieDetails:(APMovie*)movie;
 -(void)refreshApplicationBadgeLabel;
 -(void)loadDefaultSettings;
+
+-(IBAction)showPreferences:(id)sender;
 -(IBAction)back:(id)sender;
 -(IBAction)showTopRentals:(id)sender;
 -(IBAction)showNewReleases:(id)sender;

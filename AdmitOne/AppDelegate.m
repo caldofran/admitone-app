@@ -94,19 +94,19 @@
     [_mainViewController.view setHidden:YES];
     [_detailsViewController.view setHidden:NO];
     [_detailsViewController updateViewWithMovie:movie];
-    [_back setHidden:NO];
+    [_backButton setHidden:NO];
 }
 
 #pragma mark - IBActions - 
 
 -(IBAction)back:(id)sender{
-    if ([_topRentals state]) {
+    if ([_topRentalsSectionButton state]) {
         [self showTopRentals:nil];
     }
-    else if ([_currentReleases state]) {
+    else if ([_currentReleasesSectionButton state]) {
         [self showCurrentReleases:nil];
     }
-    else if ([_newReleases state]) {
+    else if ([_newReleasesSectionButton state]) {
         [self showNewReleases:nil];
     }
     else{
@@ -120,10 +120,10 @@
     [_mainViewController.view setHidden:NO];
     [_detailsViewController.view setHidden:YES];
     
-    [_topRentals setState:1];
-    [_currentReleases setState:0];
-    [_newReleases setState:0];
-    [_back setHidden:YES];
+    [_topRentalsSectionButton setState:1];
+    [_currentReleasesSectionButton setState:0];
+    [_newReleasesSectionButton setState:0];
+    [_backButton setHidden:YES];
     
     [_mainViewController showTopRentals];
 }
@@ -134,10 +134,10 @@
     [_mainViewController.view setHidden:NO];
     [_detailsViewController.view setHidden:YES];
     
-    [_topRentals setState:0];
-    [_currentReleases setState:1];
-    [_newReleases setState:0];
-    [_back setHidden:YES];
+    [_topRentalsSectionButton setState:0];
+    [_currentReleasesSectionButton setState:1];
+    [_newReleasesSectionButton setState:0];
+    [_backButton setHidden:YES];
     
     [_mainViewController showCurrentReleases];
 }
@@ -147,10 +147,10 @@
     [_mainViewController.view setHidden:NO];
     [_detailsViewController.view setHidden:YES];
     
-    [_topRentals setState:0];
-    [_currentReleases setState:0];
-    [_newReleases setState:1];
-    [_back setHidden:YES];
+    [_topRentalsSectionButton setState:0];
+    [_currentReleasesSectionButton setState:0];
+    [_newReleasesSectionButton setState:1];
+    [_backButton setHidden:YES];
     
     [_mainViewController showNewReleases];
 }
@@ -166,19 +166,19 @@
     [_mainViewController.view setHidden:NO];
     [_detailsViewController.view setHidden:YES];
     
-    [_topRentals setState:0];
-    [_currentReleases setState:0];
-    [_newReleases setState:0];
-    [_back setHidden:YES];
+    [_topRentalsSectionButton setState:0];
+    [_currentReleasesSectionButton setState:0];
+    [_newReleasesSectionButton setState:0];
+    [_backButton setHidden:YES];
 //    [_mainViewController performSelectorInBackground:@selector(showSearchForKeyWord:) withObject:[_searchField stringValue]];
     [_mainViewController showSearchForKeyWord:[_searchField stringValue] sender:sender];
 }
 
 -(IBAction)showPreferences:(id)sender{
-    if(!_preferencesWindow){
-        _preferencesWindow = [[APPreferencesWindowController alloc]initWithWindowNibName:@"APPreferences"];
+    if(!_preferencesWindowController){
+        _preferencesWindowController = [[APPreferencesWindowController alloc]initWithWindowNibName:@"APPreferences"];
     }
-    [[_preferencesWindow window] makeKeyAndOrderFront:nil];
+    [[_preferencesWindowController window] makeKeyAndOrderFront:nil];
 }
 
 #pragma mark - SCEventListenerProtocol Methods -
