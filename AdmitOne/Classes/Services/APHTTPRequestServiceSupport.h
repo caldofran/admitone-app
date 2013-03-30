@@ -1,8 +1,8 @@
 //
-//  APTorrent.h
-//  AdmitOne
+//  HTTPServiceInterface.h
+//  incidents
 //
-//  Created by Anthony Plourde on 12-01-06.
+//  Created by Anthony Plourde on 11-11-18.
 //  Copyright (c) 2012 Anthony Plourde.
 //
 //    This program is free software: you can redistribute it and/or modify
@@ -19,14 +19,17 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import <AppKit/AppKit.h>
+#import <Foundation/Foundation.h>
 
-@interface APTorrent : NSObject{
-@private
-    NSURL *_url;
-    NSInteger _seeds;
-    NSInteger _peers;
-    NSDictionary *_files; //2 keys, filename:NSString and size:NSNumber
-    NSArray *_comments;
+@interface APHTTPRequestServiceSupport : NSObject {
+
+    NSString *_acceptHeader;
+    NSString *_contentTypeHeader;
+    NSString *_tokenKeyHeader;
+    NSString *_tokenValueHeader;
+    NSString *_username;
+    NSString *_password;
 }
+- (NSDictionary *)performActionRequestToURL:(NSURL *)url withMethod:(NSString *)method body:(NSString *)body response:(NSURLResponse **)response andError:(NSError **)error;
+
 @end

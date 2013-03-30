@@ -15,11 +15,8 @@
 		692655C517063B07005A6505 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692655C417063B07005A6505 /* Quartz.framework */; };
 		9214BE4214BF324400B9B01E /* libnatpmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 922C42BF14BC7360007E21C7 /* libnatpmp.dylib */; };
 		9214BE4414BF344D00B9B01E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9214BE4314BF344D00B9B01E /* Defaults.plist */; };
-		9214BE4714BF35E600B9B01E /* APCinemaTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */; };
-		9214BE4A14BF443F00B9B01E /* APYoutubeTrailerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9214BE4914BF443F00B9B01E /* APYoutubeTrailerView.m */; };
 		9214BE4C14BF49E300B9B01E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9214BE4B14BF49E300B9B01E /* WebKit.framework */; };
 		9214BE5014BF65C000B9B01E /* trailerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9214BE4F14BF65C000B9B01E /* trailerBackground.png */; };
-		9219B86914B7322500AD1B03 /* APTorrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B86814B7322500AD1B03 /* APTorrent.m */; };
 		9219B86D14B735B300AD1B03 /* APMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B86C14B735B300AD1B03 /* APMovie.m */; };
 		9219B87114B7415F00AD1B03 /* APMovieDatasourceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B87014B7415F00AD1B03 /* APMovieDatasourceFetcher.m */; };
 		9219B88414B741E000AD1B03 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B87514B741E000AD1B03 /* NSObject+SBJSON.m */; };
@@ -30,7 +27,7 @@
 		9219B88914B741E000AD1B03 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B87F14B741E000AD1B03 /* SBJsonWriter.m */; };
 		9219B88A14B741E000AD1B03 /* RKXMLParserLibXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B88314B741E000AD1B03 /* RKXMLParserLibXML.m */; };
 		9219B89014B7423E00AD1B03 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B88F14B7423E00AD1B03 /* NSData+Base64.m */; };
-		9219B89314B7426E00AD1B03 /* HTTPRequestor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B89214B7426E00AD1B03 /* HTTPRequestor.m */; };
+		9219B89314B7426E00AD1B03 /* APHTTPRequestServiceSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B89214B7426E00AD1B03 /* APHTTPRequestServiceSupport.m */; };
 		922C40CD14BB7737007E21C7 /* ToolbarDownloadsTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 922C40CC14BB7737007E21C7 /* ToolbarDownloadsTemplate.pdf */; };
 		922C40D214BB79DA007E21C7 /* APDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C40D014BB79DA007E21C7 /* APDownloadViewController.m */; };
 		922C40D314BB79DA007E21C7 /* APDownloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922C40D114BB79DA007E21C7 /* APDownloadView.xib */; };
@@ -50,9 +47,9 @@
 		922C40F014BB7CD8007E21C7 /* DownloadStopRollover_Selected.tif in Resources */ = {isa = PBXBuildFile; fileRef = 922C40E114BB7CD8007E21C7 /* DownloadStopRollover_Selected.tif */; };
 		922C40F114BB7CD8007E21C7 /* DownloadStopRollover.tif in Resources */ = {isa = PBXBuildFile; fileRef = 922C40E214BB7CD8007E21C7 /* DownloadStopRollover.tif */; };
 		922C40F414BB7FF7007E21C7 /* APDownloadCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C40F314BB7FF7007E21C7 /* APDownloadCellView.m */; };
-		922C40FF14BB91E4007E21C7 /* Torrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C40FE14BB91E4007E21C7 /* Torrent.m */; };
-		922C410F14BB945F007E21C7 /* TrackerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C410E14BB945F007E21C7 /* TrackerNode.m */; };
-		922C411214BB9470007E21C7 /* FileListNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C411114BB9470007E21C7 /* FileListNode.m */; };
+		922C40FF14BB91E4007E21C7 /* TRTorrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C40FE14BB91E4007E21C7 /* TRTorrent.m */; };
+		922C410F14BB945F007E21C7 /* TRTrackerNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C410E14BB945F007E21C7 /* TRTrackerNode.m */; };
+		922C411214BB9470007E21C7 /* TRFileListNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C411114BB9470007E21C7 /* TRFileListNode.m */; };
 		922C411514BB9483007E21C7 /* NSStringAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 922C411414BB9483007E21C7 /* NSStringAdditions.m */; };
 		922C42C314BC7381007E21C7 /* dht.c in Sources */ = {isa = PBXBuildFile; fileRef = 922C41B214BB96C8007E21C7 /* dht.c */; };
 		922C42C414BC73A1007E21C7 /* dht.h in Headers */ = {isa = PBXBuildFile; fileRef = 922C41B114BB96C8007E21C7 /* dht.h */; };
@@ -238,11 +235,9 @@
 		9248845915965010007E494A /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 924884581596500E007E494A /* Glass.aiff */; };
 		9248845C159667D3007E494A /* APPreferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9248845B159667D3007E494A /* APPreferences.xib */; };
 		9248845F15966B8B007E494A /* APPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9248845E15966B8B007E494A /* APPreferencesWindowController.m */; };
-		92673FDF14C7346300431837 /* APMovieTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92673FDE14C7346300431837 /* APMovieTorrentFinder.m */; };
 		926F43DB14CE0179002ACAA8 /* trashTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 926F43DA14CE0179002ACAA8 /* trashTemplate.pdf */; };
 		928450BE14D97B9E00AC58C2 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928450BD14D97B9E00AC58C2 /* Sparkle.framework */; };
 		928450C014D97BCC00AC58C2 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 928450BD14D97B9E00AC58C2 /* Sparkle.framework */; };
-		92D629E414C143F600E9361F /* APBtJunkieTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D629E314C143F600E9361F /* APBtJunkieTorrentFinder.m */; };
 		92D99FED14C1DB2A00EDF1B5 /* APIsoHuntTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D99FEC14C1DB2A00EDF1B5 /* APIsoHuntTorrentFinder.m */; };
 		92D99FF114C1E2AD00EDF1B5 /* APKickAssTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D99FF014C1E2AD00EDF1B5 /* APKickAssTorrentFinder.m */; };
 		92E76D8914B7528400D7BB91 /* APMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E76D8814B7528400D7BB91 /* APMainViewController.m */; };
@@ -269,6 +264,7 @@
 		92F5E38F14A41E9B0071B3D5 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 92F5E38D14A41E9B0071B3D5 /* Credits.rtf */; };
 		92F5E39214A41E9B0071B3D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F5E39114A41E9B0071B3D5 /* AppDelegate.m */; };
 		92FE9DB31596A2DA00F437A9 /* APReactorTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FE9DB21596A2DA00F437A9 /* APReactorTorrentFinder.m */; };
+		D081528E27064814A8422335 /* APMovieTorrentFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = D08154F970144C06FF99DDED /* APMovieTorrentFinder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,14 +334,8 @@
 		692655BD17062745005A6505 /* NSButton+LinkLike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSButton+LinkLike.m"; path = "Utilities/NSButton+LinkLike.m"; sourceTree = "<group>"; };
 		692655C417063B07005A6505 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		9214BE4314BF344D00B9B01E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
-		9214BE4514BF35E600B9B01E /* APCinemaTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APCinemaTorrentFinder.h; sourceTree = "<group>"; };
-		9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APCinemaTorrentFinder.m; sourceTree = "<group>"; };
-		9214BE4814BF443F00B9B01E /* APYoutubeTrailerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APYoutubeTrailerView.h; path = Classes/Views/APYoutubeTrailerView.h; sourceTree = "<group>"; };
-		9214BE4914BF443F00B9B01E /* APYoutubeTrailerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APYoutubeTrailerView.m; path = Classes/Views/APYoutubeTrailerView.m; sourceTree = "<group>"; };
 		9214BE4B14BF49E300B9B01E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9214BE4F14BF65C000B9B01E /* trailerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trailerBackground.png; path = Resources/Images/trailerBackground.png; sourceTree = "<group>"; };
-		9219B86714B7322500AD1B03 /* APTorrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APTorrent.h; path = Classes/Model/APTorrent.h; sourceTree = "<group>"; };
-		9219B86814B7322500AD1B03 /* APTorrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APTorrent.m; path = Classes/Model/APTorrent.m; sourceTree = "<group>"; };
 		9219B86B14B735B300AD1B03 /* APMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APMovie.h; path = Classes/Model/APMovie.h; sourceTree = "<group>"; };
 		9219B86C14B735B300AD1B03 /* APMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APMovie.m; path = Classes/Model/APMovie.m; sourceTree = "<group>"; };
 		9219B86F14B7415F00AD1B03 /* APMovieDatasourceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMovieDatasourceFetcher.h; sourceTree = "<group>"; };
@@ -368,8 +358,8 @@
 		9219B88314B741E000AD1B03 /* RKXMLParserLibXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKXMLParserLibXML.m; sourceTree = "<group>"; };
 		9219B88E14B7423E00AD1B03 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Utilities/NSData+Base64.h"; sourceTree = "<group>"; };
 		9219B88F14B7423E00AD1B03 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Utilities/NSData+Base64.m"; sourceTree = "<group>"; };
-		9219B89114B7426E00AD1B03 /* HTTPRequestor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestor.h; sourceTree = "<group>"; };
-		9219B89214B7426E00AD1B03 /* HTTPRequestor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestor.m; sourceTree = "<group>"; };
+		9219B89114B7426E00AD1B03 /* APHTTPRequestServiceSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APHTTPRequestServiceSupport.h; sourceTree = "<group>"; };
+		9219B89214B7426E00AD1B03 /* APHTTPRequestServiceSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APHTTPRequestServiceSupport.m; sourceTree = "<group>"; };
 		922C40CC14BB7737007E21C7 /* ToolbarDownloadsTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ToolbarDownloadsTemplate.pdf; path = Resources/Images/ToolbarDownloadsTemplate.pdf; sourceTree = "<group>"; };
 		922C40CF14BB79DA007E21C7 /* APDownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APDownloadViewController.h; path = Classes/Controllers/APDownloadViewController.h; sourceTree = "<group>"; };
 		922C40D014BB79DA007E21C7 /* APDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APDownloadViewController.m; path = Classes/Controllers/APDownloadViewController.m; sourceTree = "<group>"; };
@@ -392,12 +382,12 @@
 		922C40F214BB7FF7007E21C7 /* APDownloadCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APDownloadCellView.h; path = Classes/Views/APDownloadCellView.h; sourceTree = "<group>"; };
 		922C40F314BB7FF7007E21C7 /* APDownloadCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APDownloadCellView.m; path = Classes/Views/APDownloadCellView.m; sourceTree = "<group>"; };
 		922C40F514BB83D9007E21C7 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		922C40FD14BB91E4007E21C7 /* Torrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Torrent.h; path = Classes/Model/Torrent.h; sourceTree = "<group>"; };
-		922C40FE14BB91E4007E21C7 /* Torrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Torrent.m; path = Classes/Model/Torrent.m; sourceTree = "<group>"; };
-		922C410D14BB945F007E21C7 /* TrackerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackerNode.h; path = Classes/Model/TrackerNode.h; sourceTree = "<group>"; };
-		922C410E14BB945F007E21C7 /* TrackerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrackerNode.m; path = Classes/Model/TrackerNode.m; sourceTree = "<group>"; };
-		922C411014BB9470007E21C7 /* FileListNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileListNode.h; path = Classes/Model/FileListNode.h; sourceTree = "<group>"; };
-		922C411114BB9470007E21C7 /* FileListNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileListNode.m; path = Classes/Model/FileListNode.m; sourceTree = "<group>"; };
+		922C40FD14BB91E4007E21C7 /* TRTorrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRTorrent.h; path = Classes/Model/TRTorrent.h; sourceTree = "<group>"; };
+		922C40FE14BB91E4007E21C7 /* TRTorrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRTorrent.m; path = Classes/Model/TRTorrent.m; sourceTree = "<group>"; };
+		922C410D14BB945F007E21C7 /* TRTrackerNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRTrackerNode.h; path = Classes/Model/TRTrackerNode.h; sourceTree = "<group>"; };
+		922C410E14BB945F007E21C7 /* TRTrackerNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRTrackerNode.m; path = Classes/Model/TRTrackerNode.m; sourceTree = "<group>"; };
+		922C411014BB9470007E21C7 /* TRFileListNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TRFileListNode.h; path = Classes/Model/TRFileListNode.h; sourceTree = "<group>"; };
+		922C411114BB9470007E21C7 /* TRFileListNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TRFileListNode.m; path = Classes/Model/TRFileListNode.m; sourceTree = "<group>"; };
 		922C411314BB9483007E21C7 /* NSStringAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSStringAdditions.h; path = Utilities/NSStringAdditions.h; sourceTree = "<group>"; };
 		922C411414BB9483007E21C7 /* NSStringAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSStringAdditions.m; path = Utilities/NSStringAdditions.m; sourceTree = "<group>"; };
 		922C411614BB9599007E21C7 /* magnet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = magnet.c; sourceTree = "<group>"; };
@@ -590,12 +580,8 @@
 		9248845B159667D3007E494A /* APPreferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = APPreferences.xib; path = Resources/XIBs/APPreferences.xib; sourceTree = "<group>"; };
 		9248845D15966B8B007E494A /* APPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APPreferencesWindowController.h; path = Classes/Controllers/APPreferencesWindowController.h; sourceTree = "<group>"; };
 		9248845E15966B8B007E494A /* APPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APPreferencesWindowController.m; path = Classes/Controllers/APPreferencesWindowController.m; sourceTree = "<group>"; };
-		92673FDE14C7346300431837 /* APMovieTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMovieTorrentFinder.m; sourceTree = "<group>"; };
 		926F43DA14CE0179002ACAA8 /* trashTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = trashTemplate.pdf; path = Resources/Images/trashTemplate.pdf; sourceTree = "<group>"; };
 		928450BD14D97B9E00AC58C2 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = AdmitOne/Utilities/Sparkle.framework; sourceTree = "<group>"; };
-		92D629E014C13DE900E9361F /* APMovieTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMovieTorrentFinder.h; sourceTree = "<group>"; };
-		92D629E214C143F600E9361F /* APBtJunkieTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APBtJunkieTorrentFinder.h; sourceTree = "<group>"; };
-		92D629E314C143F600E9361F /* APBtJunkieTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APBtJunkieTorrentFinder.m; sourceTree = "<group>"; };
 		92D99FEB14C1DB2A00EDF1B5 /* APIsoHuntTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIsoHuntTorrentFinder.h; sourceTree = "<group>"; };
 		92D99FEC14C1DB2A00EDF1B5 /* APIsoHuntTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIsoHuntTorrentFinder.m; sourceTree = "<group>"; };
 		92D99FEF14C1E2AD00EDF1B5 /* APKickAssTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APKickAssTorrentFinder.h; sourceTree = "<group>"; };
@@ -635,6 +621,8 @@
 		92F5E39114A41E9B0071B3D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		92FE9DB11596A2DA00F437A9 /* APReactorTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APReactorTorrentFinder.h; sourceTree = "<group>"; };
 		92FE9DB21596A2DA00F437A9 /* APReactorTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APReactorTorrentFinder.m; sourceTree = "<group>"; };
+		D081549C5AF6788717857BFE /* APMovieTorrentFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMovieTorrentFinder.h; sourceTree = "<group>"; };
+		D08154F970144C06FF99DDED /* APMovieTorrentFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMovieTorrentFinder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -714,10 +702,12 @@
 			isa = PBXGroup;
 			children = (
 				92D629E114C143B700E9361F /* TorrentFinders */,
-				9219B89114B7426E00AD1B03 /* HTTPRequestor.h */,
-				9219B89214B7426E00AD1B03 /* HTTPRequestor.m */,
+				9219B89114B7426E00AD1B03 /* APHTTPRequestServiceSupport.h */,
+				9219B89214B7426E00AD1B03 /* APHTTPRequestServiceSupport.m */,
 				9219B86F14B7415F00AD1B03 /* APMovieDatasourceFetcher.h */,
 				9219B87014B7415F00AD1B03 /* APMovieDatasourceFetcher.m */,
+				D081549C5AF6788717857BFE /* APMovieTorrentFinder.h */,
+				D08154F970144C06FF99DDED /* APMovieTorrentFinder.m */,
 			);
 			name = Services;
 			path = Classes/Services;
@@ -982,12 +972,6 @@
 		92D629E114C143B700E9361F /* TorrentFinders */ = {
 			isa = PBXGroup;
 			children = (
-				92D629E014C13DE900E9361F /* APMovieTorrentFinder.h */,
-				92673FDE14C7346300431837 /* APMovieTorrentFinder.m */,
-				9214BE4514BF35E600B9B01E /* APCinemaTorrentFinder.h */,
-				9214BE4614BF35E600B9B01E /* APCinemaTorrentFinder.m */,
-				92D629E214C143F600E9361F /* APBtJunkieTorrentFinder.h */,
-				92D629E314C143F600E9361F /* APBtJunkieTorrentFinder.m */,
 				92D99FEB14C1DB2A00EDF1B5 /* APIsoHuntTorrentFinder.h */,
 				92D99FEC14C1DB2A00EDF1B5 /* APIsoHuntTorrentFinder.m */,
 				92D99FEF14C1E2AD00EDF1B5 /* APKickAssTorrentFinder.h */,
@@ -1156,8 +1140,6 @@
 				92E76D9214B75F6C00D7BB91 /* APMainWindowContentView.m */,
 				922C40F214BB7FF7007E21C7 /* APDownloadCellView.h */,
 				922C40F314BB7FF7007E21C7 /* APDownloadCellView.m */,
-				9214BE4814BF443F00B9B01E /* APYoutubeTrailerView.h */,
-				9214BE4914BF443F00B9B01E /* APYoutubeTrailerView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1165,14 +1147,12 @@
 		92F5E3A414A41F440071B3D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				922C411014BB9470007E21C7 /* FileListNode.h */,
-				922C411114BB9470007E21C7 /* FileListNode.m */,
-				922C410D14BB945F007E21C7 /* TrackerNode.h */,
-				922C410E14BB945F007E21C7 /* TrackerNode.m */,
-				922C40FD14BB91E4007E21C7 /* Torrent.h */,
-				922C40FE14BB91E4007E21C7 /* Torrent.m */,
-				9219B86714B7322500AD1B03 /* APTorrent.h */,
-				9219B86814B7322500AD1B03 /* APTorrent.m */,
+				922C411014BB9470007E21C7 /* TRFileListNode.h */,
+				922C411114BB9470007E21C7 /* TRFileListNode.m */,
+				922C410D14BB945F007E21C7 /* TRTrackerNode.h */,
+				922C410E14BB945F007E21C7 /* TRTrackerNode.m */,
+				922C40FD14BB91E4007E21C7 /* TRTorrent.h */,
+				922C40FE14BB91E4007E21C7 /* TRTorrent.m */,
 				9219B86B14B735B300AD1B03 /* APMovie.h */,
 				9219B86C14B735B300AD1B03 /* APMovie.m */,
 				922C43A614BCBA6F007E21C7 /* APTorrentList.h */,
@@ -1716,7 +1696,6 @@
 			files = (
 				92F5E38B14A41E9B0071B3D5 /* main.m in Sources */,
 				92F5E39214A41E9B0071B3D5 /* AppDelegate.m in Sources */,
-				9219B86914B7322500AD1B03 /* APTorrent.m in Sources */,
 				9219B86D14B735B300AD1B03 /* APMovie.m in Sources */,
 				9219B87114B7415F00AD1B03 /* APMovieDatasourceFetcher.m in Sources */,
 				9219B88414B741E000AD1B03 /* NSObject+SBJSON.m in Sources */,
@@ -1727,29 +1706,26 @@
 				9219B88914B741E000AD1B03 /* SBJsonWriter.m in Sources */,
 				9219B88A14B741E000AD1B03 /* RKXMLParserLibXML.m in Sources */,
 				9219B89014B7423E00AD1B03 /* NSData+Base64.m in Sources */,
-				9219B89314B7426E00AD1B03 /* HTTPRequestor.m in Sources */,
+				9219B89314B7426E00AD1B03 /* APHTTPRequestServiceSupport.m in Sources */,
 				92E76D8914B7528400D7BB91 /* APMainViewController.m in Sources */,
 				92E76D9314B75F6C00D7BB91 /* APMainWindowContentView.m in Sources */,
 				92E76D9914B76F6500D7BB91 /* APMovieDetailsViewController.m in Sources */,
 				92E76D9F14B77A6A00D7BB91 /* APMovieCollectionViewItem.m in Sources */,
 				922C40D214BB79DA007E21C7 /* APDownloadViewController.m in Sources */,
 				922C40F414BB7FF7007E21C7 /* APDownloadCellView.m in Sources */,
-				922C40FF14BB91E4007E21C7 /* Torrent.m in Sources */,
-				922C410F14BB945F007E21C7 /* TrackerNode.m in Sources */,
-				922C411214BB9470007E21C7 /* FileListNode.m in Sources */,
+				922C40FF14BB91E4007E21C7 /* TRTorrent.m in Sources */,
+				922C410F14BB945F007E21C7 /* TRTrackerNode.m in Sources */,
+				922C411214BB9470007E21C7 /* TRFileListNode.m in Sources */,
 				922C411514BB9483007E21C7 /* NSStringAdditions.m in Sources */,
 				922C43A814BCBA70007E21C7 /* APTorrentList.m in Sources */,
 				922C43B214BCC7CF007E21C7 /* SCEvent.m in Sources */,
 				922C43B314BCC7CF007E21C7 /* SCEvents.m in Sources */,
-				9214BE4714BF35E600B9B01E /* APCinemaTorrentFinder.m in Sources */,
-				9214BE4A14BF443F00B9B01E /* APYoutubeTrailerView.m in Sources */,
-				92D629E414C143F600E9361F /* APBtJunkieTorrentFinder.m in Sources */,
 				92D99FED14C1DB2A00EDF1B5 /* APIsoHuntTorrentFinder.m in Sources */,
 				92D99FF114C1E2AD00EDF1B5 /* APKickAssTorrentFinder.m in Sources */,
-				92673FDF14C7346300431837 /* APMovieTorrentFinder.m in Sources */,
 				9248845F15966B8B007E494A /* APPreferencesWindowController.m in Sources */,
 				92FE9DB31596A2DA00F437A9 /* APReactorTorrentFinder.m in Sources */,
 				692655BE17062745005A6505 /* NSButton+LinkLike.m in Sources */,
+				D081528E27064814A8422335 /* APMovieTorrentFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

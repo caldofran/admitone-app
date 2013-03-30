@@ -22,17 +22,17 @@
  * DEALINGS IN THE SOFTWARE.
  *****************************************************************************/
 
-#import "Torrent.h"
-#import "FileListNode.h"
+#import "TRTorrent.h"
+#import "TRFileListNode.h"
 #import "NSStringAdditions.h"
-#import "TrackerNode.h"
+#import "TRTrackerNode.h"
 
 #import "transmission.h" // required by utils.h
 #import "utils.h" // tr_new()
 
 #define ETA_IDLE_DISPLAY_SEC (2*60)
 
-@interface Torrent (Private)
+@interface TRTorrent (Private)
 
 - (id) initWithPath: (NSString *) path hash: (NSString *) hashString torrentStruct: (tr_torrent *) torrentStruct
         magnetAddress: (NSString *) magnetAddress lib: (tr_session *) lib
@@ -41,7 +41,7 @@
         legacyIncompleteFolder: (NSString *) incompleteFolder;
 
 - (void) createFileList;
-- (void) insertPath: (NSMutableArray *) components forParent: (FileListNode *) parent fileSize: (uint64_t) size
+- (void) insertPath: (NSMutableArray *) components forParent: (TRFileListNode *) parent fileSize: (uint64_t) size
     index: (NSInteger) index flatList: (NSMutableArray *) flatFileList;
 - (void) sortFileList: (NSMutableArray *) fileNodes;
 
@@ -60,7 +60,7 @@
 
 void startQueueCallback(tr_torrent * torrent, void * torrentData)
 {
-    [(Torrent *)torrentData performSelectorOnMainThread: @selector(startQueue) withObject: nil waitUntilDone: NO];
+    [(TRTorrent *)torrentData performSelectorOnMainThread: @selector(startQueue) withObject: nil waitUntilDone: NO];
 }
 
 void completenessChangeCallback(tr_torrent * torrent, tr_completeness status, bool wasRunning, void * torrentData)
@@ -69,24 +69,24 @@ void completenessChangeCallback(tr_torrent * torrent, tr_completeness status, bo
     
     NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys: [NSNumber numberWithInt: status], @"Status",
                             [NSNumber numberWithBool: wasRunning], @"WasRunning", nil];
-    [(Torrent *)torrentData performSelectorOnMainThread: @selector(completenessChange:) withObject: dict waitUntilDone: NO];
+    [(TRTorrent *)torrentData performSelectorOnMainThread: @selector(completenessChange:) withObject: dict waitUntilDone: NO];
     
     [pool drain];
 }
 
 void ratioLimitHitCallback(tr_torrent * torrent, void * torrentData)
 {
-    [(Torrent *)torrentData performSelectorOnMainThread: @selector(ratioLimitHit) withObject: nil waitUntilDone: NO];
+    [(TRTorrent *)torrentData performSelectorOnMainThread: @selector(ratioLimitHit) withObject: nil waitUntilDone: NO];
 }
 
 void idleLimitHitCallback(tr_torrent * torrent, void * torrentData)
 {
-    [(Torrent *)torrentData performSelectorOnMainThread: @selector(idleLimitHit) withObject: nil waitUntilDone: NO];
+    [(TRTorrent *)torrentData performSelectorOnMainThread: @selector(idleLimitHit) withObject: nil waitUntilDone: NO];
 }
 
 void metadataCallback(tr_torrent * torrent, void * torrentData)
 {
-    [(Torrent *)torrentData performSelectorOnMainThread: @selector(metadataRetrieved) withObject: nil waitUntilDone: NO];
+    [(TRTorrent *)torrentData performSelectorOnMainThread: @selector(metadataRetrieved) withObject: nil waitUntilDone: NO];
 }
 
 int trashDataFile(const char * filename)
@@ -94,13 +94,13 @@ int trashDataFile(const char * filename)
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
     
     if (filename != NULL)
-        [Torrent trashFile: [NSString stringWithUTF8String: filename]];
+        [TRTorrent trashFile:[NSString stringWithUTF8String:filename]];
     
     [pool drain];
     return 0;
 }
 
-@implementation Torrent
+@implementation TRTorrent
 
 - (id) initWithPath: (NSString *) path location: (NSString *) location deleteTorrentFile: (BOOL) torrentDelete
         lib: (tr_session *) lib
@@ -113,7 +113,7 @@ int trashDataFile(const char * filename)
     if (self)
     {
         if (torrentDelete && ![[self torrentLocation] isEqualToString: path])
-            [Torrent trashFile: path];
+            [TRTorrent trashFile:path];
     }
     return self;
 }
@@ -642,7 +642,7 @@ int trashDataFile(const char * filename)
             prevTier = stats[i].tier;
         }
         
-        TrackerNode * tracker = [[TrackerNode alloc] initWithTrackerStat: &stats[i] torrent: self];
+        TRTrackerNode * tracker = [[TRTrackerNode alloc] initWithTrackerStat: &stats[i] torrent: self];
         [trackers addObject: tracker];
         [tracker release];
     }
@@ -770,7 +770,7 @@ int trashDataFile(const char * filename)
     }
 }
 
-- (NSString *) fileLocation: (FileListNode *) node
+- (NSString *) fileLocation: (TRFileListNode *) node
 {
     if ([node isFolder])
     {
@@ -1322,7 +1322,7 @@ int trashDataFile(const char * filename)
     fFileStat = tr_torrentFiles(fHandle, NULL);
 }
 
-- (CGFloat) fileProgress: (FileListNode *) node
+- (CGFloat) fileProgress: (TRFileListNode *) node
 {
     if ([self fileCount] == 1 || [self isComplete])
         return [self progress];
@@ -1575,7 +1575,7 @@ int trashDataFile(const char * filename)
 
 @end
 
-@implementation Torrent (Private)
+@implementation TRTorrent (Private)
 
 - (id) initWithPath: (NSString *) path hash: (NSString *) hashString torrentStruct: (tr_torrent *) torrentStruct
         magnetAddress: (NSString *) magnetAddress lib: (tr_session *) lib
@@ -1675,14 +1675,14 @@ int trashDataFile(const char * filename)
             if ([pathComponents count] > 2)
             {
                 //determine if folder node already exists
-                FileListNode * node;
+                TRFileListNode * node;
                 for (node in fileList)
                     if ([[node name] isEqualToString: name] && [node isFolder])
                         break;
                 
                 if (!node)
                 {
-                    node = [[FileListNode alloc] initWithFolderName: name path: path torrent: self];
+                    node = [[TRFileListNode alloc] initWithFolderName: name path: path torrent: self];
                     [fileList addObject: node];
                     [node release];
                 }
@@ -1695,7 +1695,7 @@ int trashDataFile(const char * filename)
             }
             else
             {
-                FileListNode * node = [[FileListNode alloc] initWithFileName: name path: path size: file->length index: i torrent: self];
+                TRFileListNode * node = [[TRFileListNode alloc] initWithFileName: name path: path size: file->length index: i torrent: self];
                 [fileList addObject: node];
                 [flatFileList addObject: node];
                 [node release];
@@ -1710,20 +1710,20 @@ int trashDataFile(const char * filename)
     }
     else
     {
-        FileListNode * node = [[FileListNode alloc] initWithFileName: [self name] path: @"" size: [self size] index: 0 torrent: self];
+        TRFileListNode * node = [[TRFileListNode alloc] initWithFileName: [self name] path: @"" size: [self size] index: 0 torrent: self];
         fFileList = [[NSArray arrayWithObject: node] retain];
         fFlatFileList = [fFileList retain];
         [node release];
     }
 }
 
-- (void) insertPath: (NSMutableArray *) components forParent: (FileListNode *) parent fileSize: (uint64_t) size
+- (void) insertPath: (NSMutableArray *) components forParent: (TRFileListNode *) parent fileSize: (uint64_t) size
     index: (NSInteger) index flatList: (NSMutableArray *) flatFileList
 {
     NSString * name = [components objectAtIndex: 0];
     const BOOL isFolder = [components count] > 1;
     
-    FileListNode * node = nil;
+    TRFileListNode * node = nil;
     if (isFolder)
     {
         for (node in [parent children])
@@ -1736,10 +1736,10 @@ int trashDataFile(const char * filename)
     {
         NSString * path = [[parent path] stringByAppendingPathComponent: [parent name]];
         if (isFolder)
-            node = [[FileListNode alloc] initWithFolderName: name path: path torrent: self];
+            node = [[TRFileListNode alloc] initWithFolderName: name path: path torrent: self];
         else
         {
-            node = [[FileListNode alloc] initWithFileName: name path: path size: size index: index torrent: self];
+            node = [[TRFileListNode alloc] initWithFileName: name path: path size: size index: index torrent: self];
             [flatFileList addObject: node];
         }
         
@@ -1762,7 +1762,7 @@ int trashDataFile(const char * filename)
                                             selector: @selector(compareFinder:)] autorelease];
     [fileNodes sortUsingDescriptors: [NSArray arrayWithObject: descriptor]];
     
-    for (FileListNode * node in fileNodes)
+    for (TRFileListNode * node in fileNodes)
         if ([node isFolder])
             [self sortFileList: [node children]];
 }

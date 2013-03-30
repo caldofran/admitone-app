@@ -21,7 +21,7 @@
 
 #import <AppKit/AppKit.h>
 
-@interface APDownloadCellView : NSTableCellView{
+@interface APDownloadCellView : NSTableCellView {
 @private
     IBOutlet NSButton *revealButton;
     IBOutlet NSButton *actionButton;
@@ -30,10 +30,10 @@
     IBOutlet NSTextField *statusField;
 }
 
-@property (nonatomic,retain) NSButton *revealButton;
-@property (nonatomic,retain) NSButton *actionButton;
-@property (nonatomic,retain) NSProgressIndicator *progressBar;
-@property (nonatomic,retain) NSTextField *detailField;
-@property (nonatomic,retain) NSTextField *statusField;
+@property(nonatomic, retain) NSButton *revealButton;
+@property(nonatomic, retain) NSButton *actionButton;
+@property(nonatomic, retain) NSProgressIndicator *progressBar;
+@property(nonatomic, retain) NSTextField *detailField;
+@property(nonatomic, retain) NSTextField *statusField;
 
 @end

@@ -1,7 +1,7 @@
 /******************************************************************************
- * $Id: FileListNode.h 12483 2011-05-31 22:26:04Z livings124 $
+ * $Id: TrackerNode.h 11617 2011-01-01 20:42:14Z livings124 $
  *
- * Copyright (c) 2008-2011 Transmission authors and contributors
+ * Copyright (c) 2009-2011 Transmission authors and contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -23,41 +23,34 @@
  *****************************************************************************/
 
 #import <Cocoa/Cocoa.h>
+#import "transmission.h"
 
-@class Torrent;
+@class TRTorrent;
 
-@interface FileListNode : NSObject <NSCopying>
+@interface TRTrackerNode : NSObject
 {
-    NSString * fName, * fPath;
-    BOOL fIsFolder;
-    NSMutableIndexSet * fIndexes;
+    tr_tracker_stat fStat;
     
-    uint64_t fSize;
-    NSImage * fIcon;
-    
-    NSMutableArray * fChildren;
-    
-    Torrent * fTorrent;
+    TRTorrent * fTorrent; //weak reference
 }
 
-- (id) initWithFolderName: (NSString *) name path: (NSString *) path torrent: (Torrent *) torrent;
-- (id) initWithFileName: (NSString *) name path: (NSString *) path size: (uint64_t) size index: (NSUInteger) index torrent: (Torrent *) torrent;
+- (id) initWithTrackerStat: (tr_tracker_stat *) stat torrent: (TRTorrent *) torrent;
 
-- (void) insertChild: (FileListNode *) child;
-- (void) insertIndex: (NSUInteger) index withSize: (uint64_t) size;
+- (NSString *) host;
+- (NSString *) fullAnnounceAddress;
 
-- (NSString *) description;
+- (NSInteger) tier;
 
-- (BOOL) isFolder;
-- (NSString *) name;
-- (NSString *) path;
-- (NSIndexSet *) indexes;
+- (NSUInteger) identifier;
 
-- (uint64_t) size;
-- (NSImage *) icon;
+- (TRTorrent *) torrent;
 
-- (NSMutableArray *) children;
+- (NSInteger) totalSeeders;
+- (NSInteger) totalLeechers;
+- (NSInteger) totalDownloaded;
 
-- (Torrent *) torrent;
+- (NSString *) lastAnnounceStatusString;
+- (NSString *) nextAnnounceStatusString;
+- (NSString *) lastScrapeStatusString;
 
 @end

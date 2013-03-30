@@ -22,17 +22,17 @@
  * DEALINGS IN THE SOFTWARE.
  *****************************************************************************/
 
-#import "FileListNode.h"
+#import "TRFileListNode.h"
 
-@interface FileListNode (Private)
+@interface TRFileListNode (Private)
 
-- (id) initWithFolder: (BOOL) isFolder name: (NSString *) name path: (NSString *) path torrent: (Torrent *) torrent;
+- (id) initWithFolder: (BOOL) isFolder name: (NSString *) name path: (NSString *) path torrent: (TRTorrent *) torrent;
 
 @end
 
-@implementation FileListNode
+@implementation TRFileListNode
 
-- (id) initWithFolderName: (NSString *) name path: (NSString *) path torrent: (Torrent *) torrent
+- (id) initWithFolderName: (NSString *) name path: (NSString *) path torrent: (TRTorrent *) torrent
 {
     if ((self = [self initWithFolder: YES name: name path: path torrent: torrent]))
     {
@@ -43,7 +43,7 @@
     return self;
 }
 
-- (id) initWithFileName: (NSString *) name path: (NSString *) path size: (uint64_t) size index: (NSUInteger) index torrent: (Torrent *) torrent
+- (id) initWithFileName: (NSString *) name path: (NSString *) path size: (uint64_t) size index: (NSUInteger) index torrent: (TRTorrent *) torrent
 {
     if ((self = [self initWithFolder: NO name: name path: path torrent: torrent]))
     {
@@ -54,7 +54,7 @@
     return self;
 }
 
-- (void) insertChild: (FileListNode *) child
+- (void) insertChild: (TRFileListNode *) child
 {
     NSAssert(fIsFolder, @"method can only be invoked on folders");
     
@@ -136,16 +136,16 @@
     return fChildren;
 }
 
-- (Torrent *) torrent
+- (TRTorrent *) torrent
 {
     return fTorrent;
 }
 
 @end
 
-@implementation FileListNode (Private)
+@implementation TRFileListNode (Private)
 
-- (id) initWithFolder: (BOOL) isFolder name: (NSString *) name path: (NSString *) path torrent: (Torrent *) torrent
+- (id) initWithFolder: (BOOL) isFolder name: (NSString *) name path: (NSString *) path torrent: (TRTorrent *) torrent
 {
     if ((self = [super init]))
     {

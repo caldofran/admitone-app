@@ -22,12 +22,12 @@
  * DEALINGS IN THE SOFTWARE.
  *****************************************************************************/
 
-#import "TrackerNode.h"
+#import "TRTrackerNode.h"
 #import "NSStringAdditions.h"
 
-@implementation TrackerNode
+@implementation TRTrackerNode
 
-- (id) initWithTrackerStat: (tr_tracker_stat *) stat torrent: (Torrent *) torrent
+- (id) initWithTrackerStat: (tr_tracker_stat *) stat torrent: (TRTorrent *) torrent
 {
     if ((self = [super init]))
     {
@@ -69,7 +69,7 @@
     return fStat.id;
 }
 
-- (Torrent *) torrent
+- (TRTorrent *) torrent
 {
     return fTorrent;
 }

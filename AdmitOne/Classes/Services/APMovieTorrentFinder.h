@@ -20,20 +20,25 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTTPRequestor.h"
+#import "APHTTPRequestServiceSupport.h"
 
 @class APMovie;
 
 @protocol APMovieTorrentFinderProtocol <NSObject>
-- (NSArray*)findTorrentsForMovie:(APMovie*)movie;
+
+- (NSArray *)findTorrentsForMovie:(APMovie *)movie;
+
 @end
 
-@interface APMovieTorrentFinder : HTTPRequestor {
+@interface APMovieTorrentFinder : APHTTPRequestServiceSupport {
 @private
-    
+
 }
 
-- (NSDictionary*)performActionRequestToURL:(NSURL*)url withMethod:(NSString*)method body:(NSString*)body response:(NSURLResponse**)response andError:(NSError**)error;
-- (NSString*)normalizeKeywordsForMovie:(APMovie*)movie escapingSpaces:(BOOL)escapeSpaces;
-- (BOOL)isTorrentTitle:(NSString*)title andSize:(NSInteger)size matchingMovie:(APMovie*)movie;
+- (NSDictionary *)performActionRequestToURL:(NSURL *)url withMethod:(NSString *)method body:(NSString *)body response:(NSURLResponse **)response andError:(NSError **)error;
+
+- (NSString *)normalizeKeywordsForMovie:(APMovie *)movie escapingSpaces:(BOOL)escapeSpaces;
+
+- (BOOL)isTorrentTitle:(NSString *)title andSize:(NSInteger)size matchingMovie:(APMovie *)movie;
+
 @end

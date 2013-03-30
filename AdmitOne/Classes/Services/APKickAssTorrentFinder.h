@@ -23,6 +23,6 @@
 
 @interface APKickAssTorrentFinder : APMovieTorrentFinder <APMovieTorrentFinderProtocol>
 
-+ (APKickAssTorrentFinder*) sharedInstance;
++ (APKickAssTorrentFinder *)sharedInstance;
 
 @end

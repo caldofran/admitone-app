@@ -25,45 +25,50 @@
 
 @class APMovie;
 
-@interface APMovieDetailsViewController : NSViewController{
+@interface APMovieDetailsViewController : NSViewController {
+
 @private
+
     APMovie *_movie;
-    
+
+    NSInteger _webviewReceiveCount;
+
     IBOutlet NSTextField *_movieTitle;
     IBOutlet NSTextField *_mpaaRating;
     IBOutlet NSTextField *_runtime;
     IBOutlet NSTextField *_criticsRatingText;
     IBOutlet NSTextField *_audienceRatingText;
-    
+
     IBOutlet NSImageView *_dvdCover;
     IBOutlet NSImageView *_criticsRatingImage;
     IBOutlet NSImageView *_audienceRatingImage;
-    
+
     IBOutlet NSTextView *_synopsis;
     IBOutlet NSTextView *_criticsReview;
-    
+
     IBOutlet NSView *_trailerView;
     IBOutlet WebView *_trailerWebView;
-    
+
     IBOutlet NSButton *_trailerButton;
     IBOutlet NSButton *_downloadButton;
     IBOutlet NSProgressIndicator *_trailerSearching;
     IBOutlet NSProgressIndicator *_downloadSearching;
-    
+
     IBOutlet NSPopUpButton *_languagePopup;
     IBOutlet NSSegmentedControl *_hdSwitch;
-    
-    NSInteger _webviewReceiveCount;
-    
-    
+
 }
 
--(void)updateViewWithMovie:(APMovie*)movie;
+- (void)updateViewWithMovie:(APMovie *)movie;
 
--(IBAction)watchTrailer:(id)sender;
--(IBAction)download:(id)sender;
--(IBAction)closeTrailer:(id)sender;
--(IBAction)languageSelect:(id)sender;
--(IBAction)qualitySelect:(id)sender;
+- (IBAction)watchTrailer:(id)sender;
+
+- (IBAction)download:(id)sender;
+
+- (IBAction)closeTrailer:(id)sender;
+
+- (IBAction)languageSelect:(id)sender;
+
+- (IBAction)qualitySelect:(id)sender;
 
 @end

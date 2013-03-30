@@ -21,7 +21,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface APMainWindowContentView : NSView{
+@interface APMainWindowContentView : NSView {
     NSColor *backgroundColor;
 }
 @property(nonatomic, retain) NSColor *backgroundColor;

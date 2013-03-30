@@ -19,11 +19,11 @@
 //    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-#import "HTTPRequestor.h"
+#import "APHTTPRequestServiceSupport.h"
 #import "APMovieTorrentFinder.h"
 
 @interface APIsoHuntTorrentFinder : APMovieTorrentFinder <APMovieTorrentFinderProtocol>
 
-+ (APIsoHuntTorrentFinder*) sharedInstance;
++ (APIsoHuntTorrentFinder *)sharedInstance;
 
 @end

@@ -22,88 +22,82 @@
 #import "APKickAssTorrentFinder.h"
 
 #import "APMovie.h"
-#import "NSStringAdditions.h"
 
 @implementation APKickAssTorrentFinder
 
-//kickasstorrent api endpoint
-NSString *KICKASS_ENDPOINT = @"http://www.kat.ph";
-
-//kickasstorrent api resources
-NSString *KICKASS_RESOURCE_SEARCH_BY_TITLE = @"/search/%@/?rss=1&field=seeders&sorder=desc";
+NSString *KICKASS_ENDPOINT = @"http://www.kat.ph"; //kickasstorrent api endpoint
+NSString *KICKASS_RESOURCE_SEARCH_BY_TITLE = @"/search/%@/?rss=1&field=seeders&sorder=desc"; //kickasstorrent api resources
 
 static APKickAssTorrentFinder *sharedInstance = nil;
-+ (APKickAssTorrentFinder*) sharedInstance{
-    @synchronized([APKickAssTorrentFinder class]){
+
++ (APKickAssTorrentFinder *)sharedInstance {
+
+    @synchronized ([APKickAssTorrentFinder class]) {
         if (!sharedInstance) {
-            sharedInstance = [[self alloc]init];
+            sharedInstance = [[self alloc] init];
         }
         return sharedInstance;
     }
-    return nil;
 }
 
-- (id)init{
+- (id)init {
+
     if ((self = [super init])) {
         _acceptHeader = @"application/xml";
     }
     return self;
 }
 
-- (NSString*)torrentUrlFromDictionary:(NSDictionary*)dict{
+- (NSString *)torrentUrlFromDictionary:(NSDictionary *)dict {
+
     NSString *returnedString = [[dict objectForKey:@"enclosure"] objectForKey:@"url"];
-    if ([returnedString rangeOfString:@"torcache.net"].location!=NSNotFound) {
-        returnedString = [NSString stringWithFormat:@"http://torrage.com/torrent/%@.torrent",[dict objectForKey:@"infoHash"]];
+    if ([returnedString rangeOfString:@"torcache.net"].location != NSNotFound) {
+        returnedString = [NSString stringWithFormat:@"http://torrage.com/torrent/%@.torrent", [dict objectForKey:@"infoHash"]];
     }
     return returnedString;
 }
 
-- (NSArray*)findTorrentsForMovie:(APMovie*)movie{
-    
+- (NSDictionary *)torrentDictionnaryFromServerDictionnary:(NSDictionary *)dict NS_RETURNS_RETAINED {
+
+    NSMutableDictionary *torrentDict = [[NSMutableDictionary alloc] init];
+
+    [torrentDict setObject:[dict objectForKey:@"title"] forKey:@"title"];
+    [torrentDict setObject:[dict objectForKey:@"seeds"] forKey:@"seeds"];
+    [torrentDict setObject:[self torrentUrlFromDictionary:dict] forKey:@"torrentLink"];
+    [torrentDict setObject:[dict objectForKey:@"length"] forKey:@"size"];
+
+    return torrentDict;
+}
+
+- (NSArray *)findTorrentsForMovie:(APMovie *)movie {
+
     NSString *keywords = [super normalizeKeywordsForMovie:movie escapingSpaces:NO];
-    NSString* urlString = [[KICKASS_ENDPOINT stringByAppendingFormat:KICKASS_RESOURCE_SEARCH_BY_TITLE,keywords]stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSString *urlString = [[KICKASS_ENDPOINT stringByAppendingFormat:KICKASS_RESOURCE_SEARCH_BY_TITLE, keywords] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
     NSURLResponse *response;
     NSError *error;
     NSDictionary *movies = [[[self performActionRequestToURL:[NSURL URLWithString:urlString] withMethod:@"GET" body:nil response:&response andError:&error] objectForKey:@"rss"] objectForKey:@"channel"];
-    
+
     NSMutableArray *returnedArray = [NSMutableArray array];
-    
+
     if ([[movies objectForKey:@"item"] isKindOfClass:[NSArray class]]) {
         for (NSDictionary *dict in [movies objectForKey:@"item"]) {
-            if ([super isTorrentTitle:[dict objectForKey:@"title"] andSize:[[dict objectForKey:@"size"]integerValue] matchingMovie:movie] && 
-                [[dict objectForKey:@"seeds"] integerValue]>0) {
-                NSMutableDictionary *torrentDict = [[NSMutableDictionary alloc]init];
-                [torrentDict setObject:[dict objectForKey:@"title"] forKey:@"title"];
-                [torrentDict setObject:[dict objectForKey:@"seeds"] forKey:@"seeds"];
-                [torrentDict setObject:[self torrentUrlFromDictionary:dict] forKey:@"torrentLink"];
-                [torrentDict setObject:[dict objectForKey:@"length"] forKey:@"size"];
+            if ([super isTorrentTitle:[dict objectForKey:@"title"] andSize:[[dict objectForKey:@"size"] integerValue] matchingMovie:movie] &&
+                    [[dict objectForKey:@"seeds"] integerValue] > 0) {
+                NSDictionary *torrentDict = [self torrentDictionnaryFromServerDictionnary:dict];
                 [returnedArray addObject:torrentDict];
                 [torrentDict release];
             }
         }
     }
-    else if ([[movies objectForKey:@"item"] isKindOfClass:[NSDictionary class]]){
-        if ([super isTorrentTitle:[movies objectForKey:@"title"] andSize:[[movies objectForKey:@"size"]integerValue] matchingMovie:movie] && 
-            [[movies objectForKey:@"seeds"] integerValue]>0) {
-            NSMutableDictionary *torrentDict = [[NSMutableDictionary alloc]init];
-            [torrentDict setObject:[movies objectForKey:@"title"] forKey:@"title"];
-            [torrentDict setObject:[movies objectForKey:@"seeds"] forKey:@"seeds"];
-            [torrentDict setObject:[self torrentUrlFromDictionary:movies] forKey:@"torrentLink"];
-            [torrentDict setObject:[movies objectForKey:@"size"] forKey:@"size"];
+    else if ([[movies objectForKey:@"item"] isKindOfClass:[NSDictionary class]]) {
+        if ([super isTorrentTitle:[movies objectForKey:@"title"] andSize:[[movies objectForKey:@"size"] integerValue] matchingMovie:movie] &&
+                [[movies objectForKey:@"seeds"] integerValue] > 0) {
+            NSDictionary *torrentDict = [self torrentDictionnaryFromServerDictionnary:movies];
             [returnedArray addObject:torrentDict];
             [torrentDict release];
         }
     }
-    
-//    int i = 0;
-//    for (NSDictionary *d in returnedArray) {
-//        NSLog(@"[KickAss]\n%@",d);
-//        i++;
-//        if (i>5) {
-//            break;
-//        }
-//    }
-    
+
     return returnedArray;
 }
 

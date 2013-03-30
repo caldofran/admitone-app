@@ -26,10 +26,10 @@
 #import "transmission.h"
 #import <Quartz/Quartz.h>
 
-@class FileListNode;
+@class TRFileListNode;
 
 #warning uncomment
-@interface Torrent : NSObject <NSCopying>//, QLPreviewItem>
+@interface TRTorrent : NSObject <NSCopying>//, QLPreviewItem>
 {
     tr_torrent * fHandle;
     const tr_info * fInfo;
@@ -149,7 +149,7 @@
 
 - (NSString *) torrentLocation;
 - (NSString *) dataLocation;
-- (NSString *) fileLocation: (FileListNode *) node;
+- (NSString *) fileLocation: (TRFileListNode *) node;
 
 - (CGFloat) progress;
 - (CGFloat) progressDone;
@@ -208,7 +208,7 @@
 - (void) updateFileStat;
 
 //methods require fileStats to have been updated recently to be accurate
-- (CGFloat) fileProgress: (FileListNode *) node;
+- (CGFloat) fileProgress: (TRFileListNode *) node;
 - (BOOL) canChangeDownloadCheckForFile: (NSUInteger) index;
 - (BOOL) canChangeDownloadCheckForFiles: (NSIndexSet *) indexSet;
 - (NSInteger) checkForFiles: (NSIndexSet *) indexSet;

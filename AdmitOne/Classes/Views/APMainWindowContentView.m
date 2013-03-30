@@ -12,23 +12,28 @@
 
 @synthesize backgroundColor;
 
-- (id)initWithCoder:(NSCoder *)aDecoder{
+- (id)initWithCoder:(NSCoder *)aDecoder {
+
     self = [super initWithCoder:aDecoder];
+
     if (self) {
         [self setBackgroundColor:[NSColor colorWithPatternImage:[NSImage imageNamed:@"navy_blue.png"]]];
     }
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    
+- (void)drawRect:(NSRect)dirtyRect {
+
     dirtyRect = [self bounds];
-    
+
     [NSGraphicsContext currentContext];
     [self.backgroundColor setFill];
     NSRectFill(dirtyRect);
+}
 
+- (void)dealloc {
+    [backgroundColor release];
+    [super dealloc];
 }
 
 @end

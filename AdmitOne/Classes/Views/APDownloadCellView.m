@@ -23,10 +23,15 @@
 
 @implementation APDownloadCellView
 
-@synthesize revealButton,
-            actionButton,
-            progressBar,
-            detailField,
-            statusField;
+@synthesize revealButton, actionButton, progressBar, detailField, statusField;
+
+- (void)dealloc {
+    [revealButton release];
+    [actionButton release];
+    [progressBar release];
+    [detailField release];
+    [statusField release];
+    [super dealloc];
+}
 
 @end

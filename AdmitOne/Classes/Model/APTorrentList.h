@@ -22,19 +22,17 @@
 #import <Foundation/Foundation.h>
 #import "transmission.h"
 
-@interface APTorrentList : NSObject{
+@interface APTorrentList : NSObject {
+
 @private
     NSMutableArray *_list;
-    
-    tr_session * fLib;
+    tr_session *fLib;
 }
 
-@property (nonatomic,retain) NSMutableArray *list;
+@property(nonatomic, retain) NSMutableArray *list;
 
-+ (APTorrentList*) sharedInstance;
++ (APTorrentList *)sharedInstance;
 
-- (void)addTorrentsAtPaths:(NSArray*)paths;
-- (void)addTorrentAtPath:(NSString*)path;
-- (void)removeTorrentAtPath:(NSString*)path;
+- (void)addTorrentsAtPaths:(NSArray *)paths;
 
 @end

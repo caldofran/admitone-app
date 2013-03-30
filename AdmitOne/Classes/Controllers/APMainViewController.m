@@ -24,44 +24,66 @@
 
 @implementation APMainViewController
 
-@synthesize topRentals = _topRentals,
-            currentReleases = _currentReleases,
-            newReleases = _newReleases;
+@synthesize topRentals = _topRentals, currentReleases = _currentReleases, newReleases = _newReleases;
 
--(void)awakeFromNib{
+- (void)dealloc {
+
+    [_topRentals release];
+    [_currentReleases release];
+    [_newReleases release];
+    [super dealloc];
+}
+
+- (void)awakeFromNib {
 
     [_loadingView setHidden:YES];
-    
+
     self.topRentals = [[APMovieDatasourceFetcher sharedInstance] topRentals:50];
     self.currentReleases = [[APMovieDatasourceFetcher sharedInstance] currentReleases:50];
     self.newReleases = [[APMovieDatasourceFetcher sharedInstance] newReleases:50];
-    
+
     [_collectionView setContent:self.topRentals];
 }
 
--(void)showTopRentals{
+- (void)showTopRentals {
+
     _titleContent.stringValue = @"Top DVD Rentals";
     [_collectionView setContent:self.topRentals];
+    [_loadingView setHidden:YES];
 }
 
--(void)showCurrentReleases{
+- (void)showCurrentReleases {
+
     _titleContent.stringValue = @"Current DVD Releases";
     [_collectionView setContent:self.currentReleases];
+    [_loadingView setHidden:YES];
 }
 
--(void)showNewReleases{
+- (void)showNewReleases {
+
     _titleContent.stringValue = @"New DVD Releases";
     [_collectionView setContent:self.newReleases];
+    [_loadingView setHidden:YES];
 }
 
--(void)showSearchForKeyWord:(NSString*)keywords sender:(id)sender{
+- (void)showSearchForKeyWord:(NSString *)keywords sender:(id)sender {
+
+    if (sender == nil) {
+        return;
+    }
+
     [_loadingView setHidden:NO];
-    _titleContent.stringValue = [NSString stringWithFormat:@"Searching for \"%@\"...",keywords];
+    _titleContent.stringValue = [NSString stringWithFormat:@"Searching for \"%@\"...", keywords];
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        NSArray *searchResult = [[APMovieDatasourceFetcher sharedInstance]searchMoviesWithKeywords:keywords];
+
+        NSArray *searchResult = [[APMovieDatasourceFetcher sharedInstance] searchMoviesWithKeywords:keywords];
+
         dispatch_async(dispatch_get_main_queue(), ^{
+
             if ([keywords isEqualToString:[sender stringValue]]) {
-                _titleContent.stringValue = [NSString stringWithFormat:@"%d movie(s) found for \"%@\"",[searchResult count],keywords];
+
+                _titleContent.stringValue = [NSString stringWithFormat:@"%lu movie(s) found for \"%@\"", [searchResult count], keywords];
                 [_collectionView setContent:searchResult];
                 [_loadingView setHidden:YES];
                 [CATransaction flush];

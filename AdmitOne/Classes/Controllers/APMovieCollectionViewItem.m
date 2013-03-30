@@ -22,24 +22,23 @@
 #import "APMovieCollectionViewItem.h"
 #import "APMovie.h"
 #import "AppDelegate.h"
-#import "NSButton+LinkLike.h"
 
 @implementation APMovieCollectionViewItem
 
--(void)awakeFromNib{
+- (void)awakeFromNib {
+
     if (self.representedObject) {
-        self.imageView.image = [[NSImage alloc]initWithContentsOfURL:[(APMovie*)[self representedObject] imageURL]];
-        self.textField.stringValue = [(APMovie*)[self representedObject] title];
+        self.imageView.image = [[NSImage alloc] initWithContentsOfURL:[(APMovie *) [self representedObject] imageURL]];
+        self.textField.stringValue = [(APMovie *) [self representedObject] title];
     }
-    
 }
 
-- (IBAction)downloadButton:(id)sender{
-    [[self collectionView]setSelectionIndexes:nil];
+- (IBAction)downloadButton:(id)sender {
+
+    [[self collectionView] setSelectionIndexes:nil];
     [self setSelected:YES];
-    [(AppDelegate*)[NSApp delegate] showMovieDetails:self.representedObject];
+    [[NSApp delegate] showMovieDetails:self.representedObject];
 }
-
 
 
 @end

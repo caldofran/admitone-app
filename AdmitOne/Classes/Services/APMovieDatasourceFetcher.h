@@ -20,21 +20,25 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTTPRequestor.h"
+#import "APHTTPRequestServiceSupport.h"
 
 @class APMovie;
 
-@interface APMovieDatasourceFetcher : HTTPRequestor{
+@interface APMovieDatasourceFetcher : APHTTPRequestServiceSupport {
 @private
-    
+
 }
 
-+ (APMovieDatasourceFetcher*) sharedInstance;
++ (APMovieDatasourceFetcher *)sharedInstance;
 
-- (NSArray*) topRentals:(NSInteger)limit;
-- (NSArray*) currentReleases:(NSInteger)limit;
-- (NSArray*) newReleases:(NSInteger)limit;
-- (NSArray*) searchMoviesWithKeywords:(NSString*)keywords;
-- (void) completeTrailerInfo:(APMovie*)movie;
+- (NSArray *)topRentals:(NSUInteger)limit;
+
+- (NSArray *)currentReleases:(NSUInteger)limit;
+
+- (NSArray *)newReleases:(NSUInteger)limit;
+
+- (NSArray *)searchMoviesWithKeywords:(NSString *)keywords;
+
+- (void)completeTrailerInfo:(APMovie *)movie;
 
 @end

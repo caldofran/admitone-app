@@ -21,13 +21,16 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface APPreferencesWindowController : NSWindowController{
+@interface APPreferencesWindowController : NSWindowController {
+
 @private
+
     IBOutlet NSPopUpButton *_downloadFolderPopupButton;
     IBOutlet NSMatrix *_torrentDownloaderApp;
 }
 
 - (IBAction)browseDownloadLocation:(id)sender;;
+
 - (IBAction)selectTorrentDownloaderApp:(id)sender;;
 
 @end

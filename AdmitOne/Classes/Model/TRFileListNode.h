@@ -1,7 +1,7 @@
 /******************************************************************************
- * $Id: TrackerNode.h 11617 2011-01-01 20:42:14Z livings124 $
+ * $Id: FileListNode.h 12483 2011-05-31 22:26:04Z livings124 $
  *
- * Copyright (c) 2009-2011 Transmission authors and contributors
+ * Copyright (c) 2008-2011 Transmission authors and contributors
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -23,34 +23,41 @@
  *****************************************************************************/
 
 #import <Cocoa/Cocoa.h>
-#import "transmission.h"
 
-@class Torrent;
+@class TRTorrent;
 
-@interface TrackerNode : NSObject
+@interface TRFileListNode : NSObject <NSCopying>
 {
-    tr_tracker_stat fStat;
+    NSString * fName, * fPath;
+    BOOL fIsFolder;
+    NSMutableIndexSet * fIndexes;
     
-    Torrent * fTorrent; //weak reference
+    uint64_t fSize;
+    NSImage * fIcon;
+    
+    NSMutableArray * fChildren;
+    
+    TRTorrent * fTorrent;
 }
 
-- (id) initWithTrackerStat: (tr_tracker_stat *) stat torrent: (Torrent *) torrent;
+- (id) initWithFolderName: (NSString *) name path: (NSString *) path torrent: (TRTorrent *) torrent;
+- (id) initWithFileName: (NSString *) name path: (NSString *) path size: (uint64_t) size index: (NSUInteger) index torrent: (TRTorrent *) torrent;
 
-- (NSString *) host;
-- (NSString *) fullAnnounceAddress;
+- (void) insertChild: (TRFileListNode *) child;
+- (void) insertIndex: (NSUInteger) index withSize: (uint64_t) size;
 
-- (NSInteger) tier;
+- (NSString *) description;
 
-- (NSUInteger) identifier;
+- (BOOL) isFolder;
+- (NSString *) name;
+- (NSString *) path;
+- (NSIndexSet *) indexes;
 
-- (Torrent *) torrent;
+- (uint64_t) size;
+- (NSImage *) icon;
 
-- (NSInteger) totalSeeders;
-- (NSInteger) totalLeechers;
-- (NSInteger) totalDownloaded;
+- (NSMutableArray *) children;
 
-- (NSString *) lastAnnounceStatusString;
-- (NSString *) nextAnnounceStatusString;
-- (NSString *) lastScrapeStatusString;
+- (TRTorrent *) torrent;
 
 @end

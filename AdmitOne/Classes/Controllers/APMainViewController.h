@@ -22,25 +22,28 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
-@interface APMainViewController : NSViewController <NSCollectionViewDelegate>{
+@interface APMainViewController : NSViewController <NSCollectionViewDelegate> {
+
 @private
     NSArray *_topRentals;
     NSArray *_currentReleases;
     NSArray *_newReleases;
-    
+
     IBOutlet NSCollectionView *_collectionView;
     IBOutlet NSView *_loadingView;
     IBOutlet NSTextField *_titleContent;
-    
 }
 
-@property (nonatomic,retain) NSArray *topRentals;
-@property (nonatomic,retain) NSArray *currentReleases;
-@property (nonatomic,retain) NSArray *newReleases;
+@property(nonatomic, retain) NSArray *topRentals;
+@property(nonatomic, retain) NSArray *currentReleases;
+@property(nonatomic, retain) NSArray *newReleases;
 
--(void)showTopRentals;
--(void)showCurrentReleases;
--(void)showNewReleases;
--(void)showSearchForKeyWord:(NSString*)keywords sender:(id)sender;
+- (void)showTopRentals;
+
+- (void)showCurrentReleases;
+
+- (void)showNewReleases;
+
+- (void)showSearchForKeyWord:(NSString *)keywords sender:(id)sender;
 
 @end

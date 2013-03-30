@@ -29,6 +29,7 @@
 @class APDownloadViewController;
 @class APPreferencesWindowController;
 @class APMovie;
+@class SCEvents;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, SCEventListenerProtocol> {
 
@@ -38,6 +39,7 @@
     APPreferencesWindowController *_preferencesWindowController;
 
     GAJavaScriptTracker *_tracker;
+    SCEvents *_directoryEvents;
 
     IBOutlet NSButton *_topRentalsSectionButton;
     IBOutlet NSButton *_currentReleasesSectionButton;
@@ -51,10 +53,6 @@
 @property(assign) IBOutlet NSWindow *window;
 
 - (void)showMovieDetails:(APMovie *)movie;
-
-- (void)refreshApplicationBadgeLabel;
-
-- (void)loadDefaultSettings;
 
 - (IBAction)showPreferences:(id)sender;
 
