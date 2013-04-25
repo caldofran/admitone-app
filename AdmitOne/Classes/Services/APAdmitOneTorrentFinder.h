@@ -22,8 +22,8 @@
 #import "APHTTPRequestServiceSupport.h"
 #import "APMovieTorrentFinder.h"
 
-@interface APIsoHuntTorrentFinder : APMovieTorrentFinder <APMovieTorrentFinderProtocol>
+@interface APAdmitOneTorrentFinder : APMovieTorrentFinder <APMovieTorrentFinderProtocol>
 
-+ (APIsoHuntTorrentFinder *)sharedInstance;
++ (APAdmitOneTorrentFinder *)sharedInstance;
 
 @end

@@ -26,7 +26,7 @@
 
 @protocol APMovieTorrentFinderProtocol <NSObject>
 
-- (NSArray *)findTorrentsForMovie:(APMovie *)movie;
+- (NSDictionary *)findTorrentForMovie:(APMovie *)movie;
 
 @end
 

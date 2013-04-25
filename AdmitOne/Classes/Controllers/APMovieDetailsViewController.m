@@ -22,9 +22,7 @@
 #import "APMovieDetailsViewController.h"
 #import "APMovie.h"
 #import "APMovieDatasourceFetcher.h"
-#import "APReactorTorrentFinder.h"
-#import "APIsoHuntTorrentFinder.h"
-#import "APKickAssTorrentFinder.h"
+#import "APAdmitOneTorrentFinder.h"
 #import "Constants.h"
 #import "AppDelegate.h"
 
@@ -196,51 +194,37 @@
         [_trailerButton setTitle:@"NO TRAILER FOUND"];
         [_trailerSearching stopAnimation:nil];
     }
-
 }
 
 - (void)_findDownloadForCurrentLanguage {
 
     [_downloadButton setTitle:@"SEARCHING TORRENT"];
     [_downloadSearching startAnimation:nil];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        
+        NSDictionary *foundTorrent = [[APAdmitOneTorrentFinder sharedInstance] findTorrentForMovie:_movie];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (foundTorrent != nil) {
+                _movie.bestTorrent = [foundTorrent objectForKey:@"url"];
+            }
+            
+            if ([_movie.bestTorrent length] > 0) {
+                NSLog(@"Found Torrent : %@ \n for movie : %@", foundTorrent, _movie);
+                [_downloadButton setTitle:@"DOWNLOAD"];
+            }
+            else {
+                NSLog(@"No torrent found for movie : %@", _movie);
+                [_downloadButton setTitle:@"NO DOWNLOAD FOUND"];
+            }
+            [_downloadSearching stopAnimation:nil];
+            [CATransaction flush];
 
-    NSMutableArray *torrents = [[NSMutableArray alloc] init];
-
-    dispatch_queue_t torrentFinder = dispatch_queue_create("torrentFinder", DISPATCH_QUEUE_CONCURRENT);
-
-    dispatch_async(torrentFinder, ^{
-        [torrents addObjectsFromArray:[[APKickAssTorrentFinder sharedInstance] findTorrentsForMovie:_movie]];
+        });
     });
-
-    dispatch_async(torrentFinder, ^{
-        [torrents addObjectsFromArray:[[APReactorTorrentFinder sharedInstance] findTorrentsForMovie:_movie]];
-    });
-
-    dispatch_async(torrentFinder, ^{
-        [torrents addObjectsFromArray:[[APIsoHuntTorrentFinder sharedInstance] findTorrentsForMovie:_movie]];
-    });
-
-    //when all done, merge together, sort by seeds and get the best
-    dispatch_barrier_async(torrentFinder, ^{
-
-        if ([torrents count] > 0) {
-            [torrents setArray:[torrents sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                return [[obj1 objectForKey:@"seeds"] integerValue] > [[obj2 objectForKey:@"seeds"] integerValue] ? NSOrderedAscending : NSOrderedDescending;
-            }]];
-            NSLog(@"%@", [torrents objectAtIndex:0]);
-            _movie.bestTorrent = [[torrents objectAtIndex:0] objectForKey:@"torrentLink"];
-        }
-        if ([_movie.bestTorrent length] > 0) {
-            [_downloadButton setTitle:@"DOWNLOAD"];
-        }
-        else {
-            [_downloadButton setTitle:@"NO DOWNLOAD FOUND"];
-        }
-        [_downloadSearching stopAnimation:nil];
-        [CATransaction flush];
-        [torrents release];
-    });
-    dispatch_release(torrentFinder);
+    
 }
 
 @end
