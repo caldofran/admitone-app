@@ -25,8 +25,8 @@
 
 @implementation APAdmitOneTorrentFinder
 
-NSString *API_ENDPOINT = @"http://anthonyplourde.com:8080/"; //admitone api endpoint
-NSString *API_RESOURCE = @"/admitone/api/torrents/movie?title=%@&year=%@&language=%@&quality=%@"; //admitone api resources
+NSString *API_ENDPOINT = @"http://admitoneapp.com/admitone/api"; //admitone api endpoint
+NSString *API_RESOURCE = @"/torrents/movie?title=%@&year=%@&language=%@&quality=%@"; //admitone api resources
 
 static APAdmitOneTorrentFinder *sharedInstance = nil;
 

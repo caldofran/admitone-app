@@ -48,6 +48,7 @@
     IBOutlet NSButton *_downloadPopoverButton;
     IBOutlet NSPopover *_downloadPopover;
     IBOutlet NSSearchField *_searchField;
+    IBOutlet NSWindow *_window;
 }
 
 @property(assign) IBOutlet NSWindow *window;

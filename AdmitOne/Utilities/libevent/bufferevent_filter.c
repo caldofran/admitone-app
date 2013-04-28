@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007-2011 Niels Provos and Nick Mathewson
+ * Copyright (c) 2007-2012 Niels Provos and Nick Mathewson
  * Copyright (c) 2002-2006 Niels Provos <provos@citi.umich.edu>
  * All rights reserved.
  *
@@ -46,7 +46,7 @@
 #include <winsock2.h>
 #endif
 
-#include "include/event2/util.h"
+#include "event2/util.h"
 #include "event2/bufferevent.h"
 #include "event2/buffer.h"
 #include "event2/bufferevent_struct.h"

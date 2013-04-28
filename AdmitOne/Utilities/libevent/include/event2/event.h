@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2000-2007 Niels Provos <provos@citi.umich.edu>
- * Copyright (c) 2007-2011 Niels Provos and Nick Mathewson
+ * Copyright (c) 2007-2012 Niels Provos and Nick Mathewson
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -184,7 +184,7 @@
 extern "C" {
 #endif
 
-#include "event2/event-config.h"
+#include <event2/event-config.h>
 #ifdef _EVENT_HAVE_SYS_TYPES_H
 #include <sys/types.h>
 #endif

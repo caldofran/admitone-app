@@ -163,7 +163,7 @@ static APTorrentList *sharedInstance = nil;
 
 - (void)addTorrentsAtPaths:(NSArray *)paths {
 
-    NSString *downloadDir = [[NSUserDefaults standardUserDefaults] objectForKey:kAPDownloadFolder];
+    NSString *downloadDir = [[[NSUserDefaults standardUserDefaults] objectForKey:kAPDownloadFolder] stringByExpandingTildeInPath];
     for (NSString *path in paths) {
         if ([path hasSuffix:@".torrent"]) {
             NSArray *applicationSupportDirectories = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
