@@ -61,7 +61,7 @@ static APAdmitOneTorrentFinder *sharedInstance = nil;
     
     NSURLResponse *response;
     NSError *error;
-    NSDictionary *torrent = [self performActionRequestToURL:[NSURL URLWithString:urlString] withMethod:@"GET" body:nil response:&response andError:&error];
+    NSDictionary *torrent = [self performActionRequestToURL:[NSURL URLWithString:urlString] usingCache:TRUE withMethod:@"GET" body:nil response:&response andError:&error];
 
     return torrent;
 }

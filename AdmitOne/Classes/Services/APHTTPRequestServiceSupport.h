@@ -29,7 +29,8 @@
     NSString *_tokenValueHeader;
     NSString *_username;
     NSString *_password;
+    NSMutableDictionary *_cache;
 }
-- (NSDictionary *)performActionRequestToURL:(NSURL *)url withMethod:(NSString *)method body:(NSString *)body response:(NSURLResponse **)response andError:(NSError **)error;
+- (NSDictionary *)performActionRequestToURL:(NSURL *)url usingCache:(BOOL)usingCache withMethod:(NSString *)method body:(NSString *)body response:(NSURLResponse **)response andError:(NSError **)error;
 
 @end

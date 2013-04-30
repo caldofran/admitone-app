@@ -29,16 +29,3 @@
 - (NSDictionary *)findTorrentForMovie:(APMovie *)movie;
 
 @end
-
-@interface APMovieTorrentFinder : APHTTPRequestServiceSupport {
-@private
-
-}
-
-- (NSDictionary *)performActionRequestToURL:(NSURL *)url withMethod:(NSString *)method body:(NSString *)body response:(NSURLResponse **)response andError:(NSError **)error;
-
-- (NSString *)normalizeKeywordsForMovie:(APMovie *)movie escapingSpaces:(BOOL)escapeSpaces;
-
-- (BOOL)isTorrentTitle:(NSString *)title andSize:(NSInteger)size matchingMovie:(APMovie *)movie;
-
-@end

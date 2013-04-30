@@ -26,7 +26,67 @@
 
 @implementation APHTTPRequestServiceSupport
 
-- (NSDictionary *)performActionRequestToURL:(NSURL *)url withMethod:(NSString *)method body:(NSString *)body response:(NSURLResponse **)response andError:(NSError **)error {
+- (void)dealloc {
+    [_cache release];
+    [super dealloc];
+}
+
+- (NSString*) cacheFilePath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *cacheFiledPath = [[paths objectAtIndex:0] stringByAppendingString:@"/AdmitOne/cache.plist"];
+    return cacheFiledPath;
+}
+
+- (void) cacheResponse:(NSDictionary *)response url:(NSURL*)url {
+
+    NSMutableDictionary *mutableResponse = [[NSMutableDictionary alloc] init];
+    [mutableResponse setObject:response forKey:@"response"];
+    [mutableResponse setObject:[[NSDate date] description] forKey:@"requestDate"];
+    [_cache setObject:mutableResponse forKey:[url absoluteString]];
+    [_cache writeToFile:[self cacheFilePath] atomically:YES];
+    [mutableResponse release];
+}
+
+- (id) responseFromCache:(NSURL *)url {
+
+    if(_cache == nil) {
+        NSFileManager *fm = [NSFileManager defaultManager];
+        NSString *cacheFilePath = [self cacheFilePath];
+        if ([fm fileExistsAtPath:cacheFilePath]) {
+            _cache = [[NSMutableDictionary alloc] initWithContentsOfFile:[self cacheFilePath]];
+        } else {
+            _cache = [[NSMutableDictionary alloc] init];
+            return nil;
+        }
+    }
+
+    NSDictionary *cachedResponse = [_cache objectForKey:[url absoluteString]];
+
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *todayComponents = [cal components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
+    NSDate *oldDate = [NSDate dateWithString:[cachedResponse objectForKey:@"requestDate"]];
+    NSDateComponents *earlierComponents = [cal components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:oldDate];
+    //checking if cache is too old or not
+    BOOL useCache = todayComponents.day == earlierComponents.day &&
+            todayComponents.month == earlierComponents.month &&
+            todayComponents.year == earlierComponents.year;
+    [cal release];
+    if(useCache) {
+        return [cachedResponse objectForKey:@"response"];
+    }
+    return nil;
+}
+
+- (NSDictionary *)performActionRequestToURL:(NSURL *)url usingCache:(BOOL)usingCache withMethod:(NSString *)method body:(NSString *)body response:(NSURLResponse **)response andError:(NSError **)error {
+
+    if(usingCache) {
+        NSDictionary *cachedResponse = [self responseFromCache:url];
+        if(cachedResponse != nil) {
+            NSLog(@"using cache for : %@",url);
+            return cachedResponse;
+        }
+    }
+    NSLog(@"NOT using cache for : %@",url);
 
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setTimeoutInterval:15];
@@ -81,6 +141,8 @@
 
     [responseString release];
     [request release];
+
+    [self cacheResponse:dict url:url];
 
     return [dict autorelease];
 }

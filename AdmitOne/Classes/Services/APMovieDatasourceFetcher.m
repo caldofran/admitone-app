@@ -64,45 +64,8 @@ static APMovieDatasourceFetcher *sharedInstance = nil;
     NSString *urlString = [ROTTEN_TOMATOES_ENDPOINT stringByAppendingFormat:resource, ROTTEN_TOMATOES_API_KEY, limit];
 
     NSArray *arrayToUse;
-    BOOL useCache = NO;
-
-    //check if this request is cached
-    NSDate *now = [NSDate date];
-    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
-    NSDictionary *cachedMovies = [ud objectForKey:urlString];
-
-    //if it is cached, check if it is not too old
-    if (cachedMovies) {
-        NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-        NSDateComponents *todayComponents = [cal components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:now];
-        NSDate *oldDate = [NSDate dateWithString:[cachedMovies objectForKey:@"fetchedDate"]];
-        NSDateComponents *earlierComponents = [cal components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:oldDate];
-        //checking if cache is too old or not
-        useCache = todayComponents.day == earlierComponents.day &&
-                todayComponents.month == earlierComponents.month &&
-                todayComponents.year == earlierComponents.year;
-        [cal release];
-    }
-
-    //if cache and not too old, we use it directly
-    if (useCache) {
-
-        arrayToUse = [cachedMovies objectForKey:@"movies"];
-
-    } else { //if cache is too old, we need to fetch rotten tomatoes and save the new results to cache
-
-        NSURLResponse *response;
-        NSError *error;
-        NSDictionary *movies = [self performActionRequestToURL:[NSURL URLWithString:urlString] withMethod:@"GET" body:nil response:&response andError:&error];
-        arrayToUse = [movies objectForKey:@"movies"];
-
-        //saving results to cache
-        NSMutableDictionary *dictToCache = [[NSMutableDictionary alloc] initWithDictionary:movies];
-        [dictToCache setObject:[now description] forKey:@"fetchedDate"];
-        [ud setObject:dictToCache forKey:urlString];
-        [ud synchronize];
-        [dictToCache release];
-    }
+    NSDictionary *movies = [self performActionRequestToURL:[NSURL URLWithString:urlString] usingCache:TRUE withMethod:@"GET" body:nil response:nil andError:nil];
+    arrayToUse = [movies objectForKey:@"movies"];
 
     //transforming dictionaries to movie objects
     NSMutableArray *returnedArray = [NSMutableArray arrayWithCapacity:limit];
@@ -122,7 +85,7 @@ static APMovieDatasourceFetcher *sharedInstance = nil;
     //getting the themobiedb id for that movie
     //trying to get with the imdb id
     NSString *urlString = [THEMOVIEDB_ENDPOINT stringByAppendingFormat:RESOURCE_GET_IMDB, THEMOVIEDB_API_KEY, [@"tt" stringByAppendingString:movie.imdbId]];
-    NSArray *moviesFound = (id) [self performActionRequestToURL:[NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]] withMethod:@"GET" body:nil response:nil andError:nil];
+    NSArray *moviesFound = (id) [self performActionRequestToURL:[NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]] usingCache:TRUE withMethod:@"GET" body:nil response:nil andError:nil];
 
     int theMovieDbId = NSNotFound;
     if (moviesFound != nil && [moviesFound count] > 0 && [[moviesFound objectAtIndex:0] isKindOfClass:[NSDictionary class]]) {
@@ -136,7 +99,7 @@ static APMovieDatasourceFetcher *sharedInstance = nil;
         title = [title stringByReplacingOccurrencesOfString:@":" withString:@" "];
         title = [title stringByReplacingOccurrencesOfString:@"/" withString:@" "];
         urlString = [THEMOVIEDB_ENDPOINT stringByAppendingFormat:RESOURCE_SEARCH, THEMOVIEDB_API_KEY, title];
-        moviesFound = (id) [self performActionRequestToURL:[NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]] withMethod:@"GET" body:nil response:nil andError:nil];
+        moviesFound = (id) [self performActionRequestToURL:[NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]] usingCache:TRUE withMethod:@"GET" body:nil response:nil andError:nil];
         theMovieDbId = [[[moviesFound objectAtIndex:0] objectForKey:@"id"] intValue];
     }
 
@@ -145,9 +108,8 @@ static APMovieDatasourceFetcher *sharedInstance = nil;
     }
 
     //getting the movie info from themoviedb
-    NSURLResponse *response;
     urlString = [THEMOVIEDB_ENDPOINT stringByAppendingFormat:RESOURCE_GET_ID, THEMOVIEDB_API_KEY, theMovieDbId];
-    moviesFound = (id) [self performActionRequestToURL:[NSURL URLWithString:urlString] withMethod:@"GET" body:nil response:&response andError:nil];
+    moviesFound = (id) [self performActionRequestToURL:[NSURL URLWithString:urlString] usingCache:TRUE withMethod:@"GET" body:nil response:nil andError:nil];
 
     //filling youtube trailer info
     NSString *youtubeTrailer = [[moviesFound objectAtIndex:0] objectForKey:@"trailer"];
