@@ -39,6 +39,9 @@
 
 - (void) cacheResponse:(NSDictionary *)response url:(NSURL*)url {
 
+    if(response == nil) {
+        return;
+    }
     NSMutableDictionary *mutableResponse = [[NSMutableDictionary alloc] init];
     [mutableResponse setObject:response forKey:@"response"];
     [mutableResponse setObject:[[NSDate date] description] forKey:@"requestDate"];
