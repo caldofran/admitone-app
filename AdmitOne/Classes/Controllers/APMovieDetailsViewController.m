@@ -21,7 +21,8 @@
 
 #import "APMovieDetailsViewController.h"
 #import "APMovie.h"
-#import "APMovieDatasourceFetcher.h"
+#import "APAdmitOneLatestMoviesFetcher.h"
+#import "APAdmitOneMovieTrailerFinder.h"
 #import "APAdmitOneTorrentFinder.h"
 #import "Constants.h"
 #import "AppDelegate.h"
@@ -175,7 +176,7 @@
 
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 
-            [[APMovieDatasourceFetcher sharedInstance] completeTrailerInfo:_movie];
+            [[APAdmitOneMovieTrailerFinder sharedInstance] completeTrailerInfo:_movie];
 
             dispatch_async(dispatch_get_main_queue(), ^{
 

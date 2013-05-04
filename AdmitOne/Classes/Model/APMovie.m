@@ -23,30 +23,28 @@
 
 @implementation APMovie
 
-@synthesize id = _id, imdbId = _imdbId, title = _title, mppaRating = _mppaRating, youtubeTrailer = _youtubeTrailer, bestTorrent = _bestTorrent, criticsConsensus = _criticsConsensus, criticsRating = _criticsRating, audienceRating = _audienceRating, audienceScore = _audienceScore, synopsis = _synopsis, imageURL = _imageURL;
+@synthesize imdbId = _imdbId, title = _title, mppaRating = _mppaRating, youtubeTrailer = _youtubeTrailer, bestTorrent = _bestTorrent, criticsConsensus = _criticsConsensus, criticsRating = _criticsRating, audienceRating = _audienceRating, audienceScore = _audienceScore, synopsis = _synopsis, imageURL = _imageURL;
 
 - (id)initWithDictionnary:(NSDictionary *)dict {
 
     if ((self = [super init])) {
-        self.id = [dict objectForKey:@"id"];
-        self.imdbId = [[dict objectForKey:@"alternate_ids"] objectForKey:@"imdb"];
+        self.imdbId = [dict objectForKey:@"imdbId"];
         self.title = [dict objectForKey:@"title"];
         self.year = [[dict objectForKey:@"year"] integerValue];
-        self.mppaRating = [dict objectForKey:@"mpaa_rating"];
+        self.mppaRating = [dict objectForKey:@"mppaRating"];
         self.runtime = [[dict objectForKey:@"runtime"] integerValue];
-        self.criticsConsensus = [dict objectForKey:@"critics_consensus"];
-        self.criticsRating = [[dict objectForKey:@"ratings"] objectForKey:@"critics_rating"];
-        self.criticsScore = [[[dict objectForKey:@"ratings"] objectForKey:@"critics_score"] integerValue];
-        self.audienceRating = [[dict objectForKey:@"ratings"] objectForKey:@"audience_rating"];
-        self.audienceScore = [[[dict objectForKey:@"ratings"] objectForKey:@"audience_score"] integerValue];
+        self.criticsConsensus = [dict objectForKey:@"criticsConsensus"];
+        self.criticsRating = [dict objectForKey:@"criticsRating"];
+        self.criticsScore = [[dict objectForKey:@"criticsScore"] integerValue];
+        self.audienceRating = [dict objectForKey:@"audienceRating"];
+        self.audienceScore = [[dict objectForKey:@"audienceScore"] integerValue];
         self.synopsis = [dict objectForKey:@"synopsis"];
-        self.imageURL = [NSURL URLWithString:[[dict objectForKey:@"posters"] objectForKey:@"detailed"]];
+        self.imageURL = [NSURL URLWithString:[dict objectForKey:@"imageURL"]];
     }
     return self;
 }
 
 - (void)dealloc {
-    [_id release];
     [_imdbId release];
     [_title release];
     [_mppaRating release];

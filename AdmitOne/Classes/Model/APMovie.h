@@ -23,7 +23,6 @@
 
 @interface APMovie : NSObject {
 @private
-    NSString *_id;
     NSString *_imdbId;
     NSString *_title;
     NSString *_mppaRating;
@@ -41,7 +40,6 @@
 
 - (id)initWithDictionnary:(NSDictionary *)dict;
 
-@property(nonatomic, retain) NSString *id;
 @property(nonatomic, retain) NSString *imdbId;
 @property(nonatomic, retain) NSString *title;
 @property(nonatomic, retain) NSString *synopsis;

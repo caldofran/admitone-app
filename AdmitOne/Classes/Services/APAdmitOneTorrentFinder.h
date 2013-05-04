@@ -25,5 +25,6 @@
 @interface APAdmitOneTorrentFinder : APHTTPRequestServiceSupport <APMovieTorrentFinderProtocol>
 
 + (APAdmitOneTorrentFinder *)sharedInstance;
+- (NSDictionary *)findTorrentForMovie:(APMovie *)movie;
 
 @end

@@ -20,13 +20,10 @@
 //
 
 #import "APAdmitOneTorrentFinder.h"
-
+#import "Constants.h"
 #import "APMovie.h"
 
 @implementation APAdmitOneTorrentFinder
-
-NSString *API_ENDPOINT = @"http://admitoneapp.com/admitone/api"; //admitone api endpoint
-NSString *API_RESOURCE = @"/torrents/movie?title=%@&year=%@&language=%@&quality=%@"; //admitone api resources
 
 static APAdmitOneTorrentFinder *sharedInstance = nil;
 
@@ -55,7 +52,7 @@ static APAdmitOneTorrentFinder *sharedInstance = nil;
     NSString *quality = [[[NSUserDefaults standardUserDefaults] objectForKey:@"hdQuality"] boolValue] ? @"hd" : @"sd";
     NSString *year = [NSString stringWithFormat:@"%ld",movie.year];
     
-    NSString *urlString = [[API_ENDPOINT stringByAppendingFormat:API_RESOURCE, title, year, language, quality] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSString *urlString = [[kAdmitOneApiEndPoint stringByAppendingFormat:kAdmitOneApiResourceTorrent, title, year, language, quality] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
 
     NSLog(@"Making request to API : %@", urlString);
     

@@ -179,7 +179,7 @@
 		9214BE4C14BF49E300B9B01E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9214BE4B14BF49E300B9B01E /* WebKit.framework */; };
 		9214BE5014BF65C000B9B01E /* trailerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9214BE4F14BF65C000B9B01E /* trailerBackground.png */; };
 		9219B86D14B735B300AD1B03 /* APMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B86C14B735B300AD1B03 /* APMovie.m */; };
-		9219B87114B7415F00AD1B03 /* APMovieDatasourceFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B87014B7415F00AD1B03 /* APMovieDatasourceFetcher.m */; };
+		9219B87114B7415F00AD1B03 /* APAdmitOneLatestMoviesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B87014B7415F00AD1B03 /* APAdmitOneLatestMoviesFetcher.m */; };
 		9219B88414B741E000AD1B03 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B87514B741E000AD1B03 /* NSObject+SBJSON.m */; };
 		9219B88514B741E000AD1B03 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B87714B741E000AD1B03 /* NSString+SBJSON.m */; };
 		9219B88614B741E000AD1B03 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9219B87914B741E000AD1B03 /* SBJSON.m */; };
@@ -237,6 +237,7 @@
 		928450BE14D97B9E00AC58C2 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928450BD14D97B9E00AC58C2 /* Sparkle.framework */; };
 		928450C014D97BCC00AC58C2 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 928450BD14D97B9E00AC58C2 /* Sparkle.framework */; };
 		92D88DAE173091FB00DED54C /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 92D88DAD173091FB00DED54C /* dsa_pub.pem */; };
+		92D88DB11734DAB700DED54C /* APAdmitOneMovieTrailerFinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D88DB01734DAB700DED54C /* APAdmitOneMovieTrailerFinder.m */; };
 		92E76D8914B7528400D7BB91 /* APMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E76D8814B7528400D7BB91 /* APMainViewController.m */; };
 		92E76D8B14B755AC00D7BB91 /* APMovieCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E76D8A14B755AC00D7BB91 /* APMovieCollectionViewItem.xib */; };
 		92E76D9314B75F6C00D7BB91 /* APMainWindowContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E76D9214B75F6C00D7BB91 /* APMainWindowContentView.m */; };
@@ -693,8 +694,8 @@
 		9214BE4F14BF65C000B9B01E /* trailerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trailerBackground.png; path = Resources/Images/trailerBackground.png; sourceTree = "<group>"; };
 		9219B86B14B735B300AD1B03 /* APMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APMovie.h; path = Classes/Model/APMovie.h; sourceTree = "<group>"; };
 		9219B86C14B735B300AD1B03 /* APMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APMovie.m; path = Classes/Model/APMovie.m; sourceTree = "<group>"; };
-		9219B86F14B7415F00AD1B03 /* APMovieDatasourceFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APMovieDatasourceFetcher.h; sourceTree = "<group>"; };
-		9219B87014B7415F00AD1B03 /* APMovieDatasourceFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APMovieDatasourceFetcher.m; sourceTree = "<group>"; };
+		9219B86F14B7415F00AD1B03 /* APAdmitOneLatestMoviesFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAdmitOneLatestMoviesFetcher.h; sourceTree = "<group>"; };
+		9219B87014B7415F00AD1B03 /* APAdmitOneLatestMoviesFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAdmitOneLatestMoviesFetcher.m; sourceTree = "<group>"; };
 		9219B87314B741E000AD1B03 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		9219B87414B741E000AD1B03 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		9219B87514B741E000AD1B03 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -775,6 +776,8 @@
 		926F43DA14CE0179002ACAA8 /* trashTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = trashTemplate.pdf; path = Resources/Images/trashTemplate.pdf; sourceTree = "<group>"; };
 		928450BD14D97B9E00AC58C2 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = AdmitOne/Utilities/Sparkle.framework; sourceTree = "<group>"; };
 		92D88DAD173091FB00DED54C /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Resources/dsa_pub.pem; sourceTree = "<group>"; };
+		92D88DAF1734DAB700DED54C /* APAdmitOneMovieTrailerFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APAdmitOneMovieTrailerFinder.h; sourceTree = "<group>"; };
+		92D88DB01734DAB700DED54C /* APAdmitOneMovieTrailerFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APAdmitOneMovieTrailerFinder.m; sourceTree = "<group>"; };
 		92E76D8714B7528400D7BB91 /* APMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APMainViewController.h; path = Classes/Controllers/APMainViewController.h; sourceTree = "<group>"; };
 		92E76D8814B7528400D7BB91 /* APMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APMainViewController.m; path = Classes/Controllers/APMainViewController.m; sourceTree = "<group>"; };
 		92E76D8A14B755AC00D7BB91 /* APMovieCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = APMovieCollectionViewItem.xib; path = Resources/XIBs/APMovieCollectionViewItem.xib; sourceTree = "<group>"; };
@@ -1358,10 +1361,12 @@
 			children = (
 				9219B89114B7426E00AD1B03 /* APHTTPRequestServiceSupport.h */,
 				9219B89214B7426E00AD1B03 /* APHTTPRequestServiceSupport.m */,
-				9219B86F14B7415F00AD1B03 /* APMovieDatasourceFetcher.h */,
-				9219B87014B7415F00AD1B03 /* APMovieDatasourceFetcher.m */,
+				9219B86F14B7415F00AD1B03 /* APAdmitOneLatestMoviesFetcher.h */,
+				9219B87014B7415F00AD1B03 /* APAdmitOneLatestMoviesFetcher.m */,
 				D0815215AB517FE5AC09346B /* APAdmitOneTorrentFinder.h */,
 				D081502875B4DD531413C941 /* APAdmitOneTorrentFinder.m */,
+				92D88DAF1734DAB700DED54C /* APAdmitOneMovieTrailerFinder.h */,
+				92D88DB01734DAB700DED54C /* APAdmitOneMovieTrailerFinder.m */,
 			);
 			name = Services;
 			path = Classes/Services;
@@ -2133,7 +2138,7 @@
 				92F5E38B14A41E9B0071B3D5 /* main.m in Sources */,
 				92F5E39214A41E9B0071B3D5 /* AppDelegate.m in Sources */,
 				9219B86D14B735B300AD1B03 /* APMovie.m in Sources */,
-				9219B87114B7415F00AD1B03 /* APMovieDatasourceFetcher.m in Sources */,
+				9219B87114B7415F00AD1B03 /* APAdmitOneLatestMoviesFetcher.m in Sources */,
 				9219B88414B741E000AD1B03 /* NSObject+SBJSON.m in Sources */,
 				9219B88514B741E000AD1B03 /* NSString+SBJSON.m in Sources */,
 				9219B88614B741E000AD1B03 /* SBJSON.m in Sources */,
@@ -2159,6 +2164,7 @@
 				9248845F15966B8B007E494A /* APPreferencesWindowController.m in Sources */,
 				692655BE17062745005A6505 /* NSButton+LinkLike.m in Sources */,
 				D0815C123600D57FBCD516F5 /* APAdmitOneTorrentFinder.m in Sources */,
+				92D88DB11734DAB700DED54C /* APAdmitOneMovieTrailerFinder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

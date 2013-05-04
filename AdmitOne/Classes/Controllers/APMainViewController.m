@@ -20,7 +20,7 @@
 //
 
 #import "APMainViewController.h"
-#import "APMovieDatasourceFetcher.h"
+#import "APAdmitOneLatestMoviesFetcher.h"
 
 @implementation APMainViewController
 
@@ -38,9 +38,9 @@
 
     [_loadingView setHidden:YES];
 
-    self.topRentals = [[APMovieDatasourceFetcher sharedInstance] topRentals:50];
-    self.currentReleases = [[APMovieDatasourceFetcher sharedInstance] currentReleases:50];
-    self.newReleases = [[APMovieDatasourceFetcher sharedInstance] newReleases:50];
+    self.topRentals = [[APAdmitOneLatestMoviesFetcher sharedInstance] topRentals:50];
+    self.currentReleases = [[APAdmitOneLatestMoviesFetcher sharedInstance] currentReleases:50];
+    self.newReleases = [[APAdmitOneLatestMoviesFetcher sharedInstance] newReleases:50];
 
     [_collectionView setContent:self.topRentals];
 }
@@ -77,7 +77,7 @@
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
 
-        NSArray *searchResult = [[APMovieDatasourceFetcher sharedInstance] searchMoviesWithKeywords:keywords];
+        NSArray *searchResult = [[APAdmitOneLatestMoviesFetcher sharedInstance] searchMoviesWithKeywords:keywords];
 
         dispatch_async(dispatch_get_main_queue(), ^{
 

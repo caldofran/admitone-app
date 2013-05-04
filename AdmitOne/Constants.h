@@ -33,4 +33,13 @@
 #define kAPUseSystemAppToDownload @"kAPUseSystemAppToDownload"
 #define kAPUseSystemAppToDownloadDefault NO
 
+//AdmitOne API
+#define kAdmitOneApiEndPoint @"http://admitoneapp.com/admitone/api"
+#define kAdmitOneApiResourceTrailer @"/movies/trailer?title=%@&imdbId=%@"
+#define kAdmitOneApiResourceTopRentals @"/movies/topRentals"
+#define kAdmitOneApiResourceNewReleases @"/movies/newReleases"
+#define kAdmitOneApiResourceCurrentReleases @"/movies/currentReleases"
+#define kAdmitOneApiResourceSearch @"/movies/search?keywords=%@"
+#define kAdmitOneApiResourceTorrent @"/torrents/movie?title=%@&year=%@&language=%@&quality=%@"
+
 #endif

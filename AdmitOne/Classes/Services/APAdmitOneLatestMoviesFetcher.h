@@ -24,12 +24,9 @@
 
 @class APMovie;
 
-@interface APMovieDatasourceFetcher : APHTTPRequestServiceSupport {
-@private
+@interface APAdmitOneLatestMoviesFetcher : APHTTPRequestServiceSupport 
 
-}
-
-+ (APMovieDatasourceFetcher *)sharedInstance;
++ (APAdmitOneLatestMoviesFetcher *)sharedInstance;
 
 - (NSArray *)topRentals:(NSUInteger)limit;
 
@@ -38,7 +35,5 @@
 - (NSArray *)newReleases:(NSUInteger)limit;
 
 - (NSArray *)searchMoviesWithKeywords:(NSString *)keywords;
-
-- (void)completeTrailerInfo:(APMovie *)movie;
 
 @end

@@ -138,6 +138,8 @@
             SBJSON *jsonParser = [[SBJSON alloc] init];
             dict = [[jsonParser objectWithString:responseString error:NULL] retain];
             [jsonParser autorelease];
+        } else {
+            dict = [[NSDictionary alloc] initWithObjectsAndKeys:responseString, @"data", nil];
         }
     }
     [pool drain];
