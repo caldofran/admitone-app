@@ -30,6 +30,7 @@
 #import "APTorrentList.h"
 #import "Constants.h"
 #import "TRTorrent.h"
+#import "Reachability.h"
 
 @implementation AppDelegate
 
@@ -47,6 +48,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 
+    NSUInteger theFlags = [NSEvent modifierFlags] & NSDeviceIndependentModifierFlagsMask;
+    if(theFlags & NSAlternateKeyMask) {
+        [self _resetAll];
+    }
+
+    [self _checkInternet];
     [self _initializeDefaultSettings];
     [self _initializeMainViews];
 
@@ -308,6 +315,38 @@
         badgeLabel = [NSString stringWithFormat:@"%d%%", (int) totalProgress];
 
     [[[NSApplication sharedApplication] dockTile] setBadgeLabel:badgeLabel];
+}
+
+- (void)_resetAll {
+
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Reset application data" defaultButton:@"No" alternateButton:@"Yes" otherButton:nil informativeTextWithFormat:@"Starting the application with the Alt/Option modifier key will reset the application data. You might loose incomplete downloads. Are you sure you want to continue ?"];
+    BOOL doReset = [alert runModal] == NSAlertAlternateReturn;
+    if (doReset) {
+        //reseting NSUserDefaults
+        NSUserDefaults * defs = [NSUserDefaults standardUserDefaults];
+        NSDictionary * dict = [defs dictionaryRepresentation];
+        for (id key in dict) {
+            [defs removeObjectForKey:key];
+        }
+        [defs synchronize];
+        
+        //reseting Application Support data
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+        NSString *applicationSupportDirectory = [[paths objectAtIndex:0] stringByAppendingFormat:@"/AdmitOne"];
+        NSFileManager *fm = [NSFileManager defaultManager];
+        [fm removeItemAtPath:applicationSupportDirectory error:nil];
+    }
+}
+
+- (void)_checkInternet {
+    
+    // allocate a reachability object
+    Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
+    if([reach currentReachabilityStatus] == NotReachable) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"Unreachable Internet" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"AdmitOne needs an internet connection in order to work. Please make sure you are connected to the internet and launch AdmitOne again."];
+        [alert runModal];
+        [NSApp terminate: nil];
+    }
 }
 
 

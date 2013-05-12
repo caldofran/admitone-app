@@ -175,6 +175,8 @@
 		69427337172D7A3E00E12C37 /* natpmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 694271D1172D726600E12C37 /* natpmp.c */; };
 		69427339172D7A8200E12C37 /* libcurl.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 69427338172D7A8200E12C37 /* libcurl.4.dylib */; };
 		69427342172D8FB800E12C37 /* natpmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 6942723F172D72A300E12C37 /* natpmp.c */; };
+		69CB7E1B1740020A00514FAC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 69CB7E1A1740020A00514FAC /* Reachability.m */; };
+		69CB7E1D1740026A00514FAC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CB7E1C1740026A00514FAC /* SystemConfiguration.framework */; };
 		9214BE4414BF344D00B9B01E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9214BE4314BF344D00B9B01E /* Defaults.plist */; };
 		9214BE4C14BF49E300B9B01E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9214BE4B14BF49E300B9B01E /* WebKit.framework */; };
 		9214BE5014BF65C000B9B01E /* trailerBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 9214BE4F14BF65C000B9B01E /* trailerBackground.png */; };
@@ -689,6 +691,9 @@
 		6942727A172D72A400E12C37 /* webseed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = webseed.h; sourceTree = "<group>"; };
 		6942727B172D72A400E12C37 /* wildmat.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = wildmat.c; sourceTree = "<group>"; };
 		69427338172D7A8200E12C37 /* libcurl.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcurl.4.dylib; path = usr/lib/libcurl.4.dylib; sourceTree = SDKROOT; };
+		69CB7E191740020A00514FAC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Utilities/Reachability.h; sourceTree = "<group>"; };
+		69CB7E1A1740020A00514FAC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Utilities/Reachability.m; sourceTree = "<group>"; };
+		69CB7E1C1740026A00514FAC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9214BE4314BF344D00B9B01E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		9214BE4B14BF49E300B9B01E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9214BE4F14BF65C000B9B01E /* trailerBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = trailerBackground.png; path = Resources/Images/trailerBackground.png; sourceTree = "<group>"; };
@@ -868,6 +873,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CB7E1D1740026A00514FAC /* SystemConfiguration.framework in Frameworks */,
 				92F5E37F14A41E9B0071B3D5 /* Cocoa.framework in Frameworks */,
 				922C438514BC90FE007E21C7 /* libtransmission.a in Frameworks */,
 				928450BE14D97B9E00AC58C2 /* Sparkle.framework in Frameworks */,
@@ -1497,6 +1503,7 @@
 		92F5E37D14A41E9B0071B3D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69CB7E1C1740026A00514FAC /* SystemConfiguration.framework */,
 				692655C417063B07005A6505 /* Quartz.framework */,
 				92F5E38314A41E9B0071B3D5 /* Foundation.framework */,
 				92F5E38114A41E9B0071B3D5 /* AppKit.framework */,
@@ -1600,6 +1607,8 @@
 		92F5E3A514A41F520071B3D5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				69CB7E191740020A00514FAC /* Reachability.h */,
+				69CB7E1A1740020A00514FAC /* Reachability.m */,
 				69427208172D72A300E12C37 /* libtransmission */,
 				6942710E172D726600E12C37 /* dht */,
 				69427117172D726600E12C37 /* libevent */,
@@ -2165,6 +2174,7 @@
 				692655BE17062745005A6505 /* NSButton+LinkLike.m in Sources */,
 				D0815C123600D57FBCD516F5 /* APAdmitOneTorrentFinder.m in Sources */,
 				92D88DB11734DAB700DED54C /* APAdmitOneMovieTrailerFinder.m in Sources */,
+				69CB7E1B1740020A00514FAC /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
