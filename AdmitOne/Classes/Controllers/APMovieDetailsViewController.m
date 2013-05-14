@@ -117,7 +117,7 @@
             path = [[paths objectAtIndex:0] stringByAppendingFormat:@"/AdmitOne/Temp/%@", _movie.bestTorrent.lastPathComponent];
         }
         else {
-            NSString *downloadFolder = [[NSUserDefaults standardUserDefaults] objectForKey:kAPDownloadFolder];
+            NSString *downloadFolder = [[[NSUserDefaults standardUserDefaults] objectForKey:kAPDownloadFolder] stringByExpandingTildeInPath];
             path = [downloadFolder stringByAppendingFormat:@"/%@", _movie.bestTorrent.lastPathComponent];
         }
 
