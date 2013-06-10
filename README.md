@@ -1,4 +1,3 @@
-# AdmitOne App
 Official site : [admitoneapp.com](http://admitoneapp.com/)
 
 ![AdmitOne App Logo](http://admitoneapp.com/images/icon.png)
