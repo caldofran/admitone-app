@@ -3,7 +3,7 @@ Official site : [admitoneapp.com](http://admitoneapp.com/)
 ![AdmitOne App Logo](http://admitoneapp.com/images/icon.png)
 ## Movie Downloader, Torrent Made Easy !
 
-![AdmitOne App for Mac](http://admitoneapp.com/images/imac.png)
+![AdmitOne App for Mac](http://admitoneapp.com/images/mbp-retina.png)
 
 Downloading Movies from Torrents, The Easy Way.
 In the last years, downloading or streaming movies have become something really common and easy, with services like the iTunes store or Netflix. These services are great, as long as we want to pay for your movie rentals. So, if we wanted to use the free alternative, we had to go on Torrent sites and get annoyed by all those suspicious ads. But now, there is AdmitOne.
